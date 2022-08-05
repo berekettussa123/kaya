@@ -1,0 +1,832 @@
+.cardContainer {
+  display: flex;
+  border-radius: 17px;
+  border-left: 17.16px solid #2691a3;
+  -webkit-box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+  box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+}
+.addLogo {
+  width: 66px;
+  height: 66px;
+
+  font-size: 6.8px;
+  font-weight: 600;
+  color: #2691a3;
+  border-radius: 15.09px;
+  background-color: rgba(85, 143, 211, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.navButtonTitle {
+  color: white;
+}
+.iconAndInputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10.92px;
+}
+
+.ContactAndEdit {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+.iconContainer {
+  width: 21.34px;
+  height: 21.34px;
+  border-radius: 2.32px;
+  background-color: #eef4fb;
+  transform: rotateZ(45deg); /* CSS3 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.iconContainer * {
+  width: 15.93px !important;
+  height: 15.93px !important;
+  /* transform: rotateZ(-30deg); */
+}
+.iconAndInput {
+  display: flex;
+  gap: 10.92px;
+}
+.SocialmediaContainer {
+  width: max-content;
+  border-radius: 15px;
+  margin-left: 57px;
+  margin-top: 26px;
+  padding: 16px 37.91px;
+  -webkit-box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+  box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+}
+.inputContainer input {
+  border: none;
+  background-color: #eef4fb;
+  border-radius: 4px;
+  height: 22px;
+  width: 179px;
+  padding: 0px 5px;
+}
+
+/*Card Area*/
+.cardAreaContainer {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+  box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+  border-left: 17.16px solid #2691a3;
+  border-radius: 15px;
+  padding: 20px 36px 11px 20px;
+}
+.areaCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.centerIconAndTitleContainer {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 52px;
+}
+.centerIconAndTitleContainer .centerTitle {
+  color: #2691a3;
+}
+.centerIconAndTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.centerTitleMain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 533px;
+  font-weight: 600;
+}
+.centerButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+  margin-top: 11px;
+}
+.centerButton1 {
+  background-color: #ffb934 !important;
+}
+.centerButton2 {
+  background-color: #ff6667 !important;
+}
+.areaCenter {
+  background-color: #eef4fb;
+  border-radius: 15px;
+  padding: 15px 23px 22px 21px;
+  width: 577px;
+}
+.centerTitle {
+  font-size: 7px;
+  font-weight: 500;
+  text-align: center;
+  /* width: 36px; 
+   height: 18px; */
+}
+.areaTitle {
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 14px;
+}
+.centerTitleMain {
+  font-size: 12px;
+  color: #2691a3;
+}
+
+.centerIcon img {
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+}
+.categoryContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+.centerbtn {
+  /* display: flex; */
+  /* width: min-content; */
+  align-self: flex-end !important;
+  background-color: #2691a3;
+  border-radius: 7px;
+  color: white;
+  border: none;
+  /* margin-top: 25px; */
+  padding: 9px 16px;
+  font-size: 13px;
+  /* position: static;
+  right: 0; */
+}
+
+.categoryContainer .singleCategory {
+  font-size: 10px;
+  font-weight: 500;
+  border: 2px #2691a3 solid;
+  color: #2691a3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: max-content;
+  padding: 5.5px 16px;
+  border-radius: 7px;
+}
+.cardListsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.listCardTitle {
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 7px;
+}
+
+.cardListsContainer {
+  padding: 19px 37px 11px 37px;
+  -webkit-box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+  box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+  border-radius: 15px;
+}
+.cardUploadContainer {
+  padding: 19px 21px 16px 21px;
+  -webkit-box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+  box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+  border-radius: 15px;
+}
+.cardUploadContainer .uploadDesc {
+  width: 217px;
+  height: 76px;
+  padding: 14px 20px;
+  font-size: 11px;
+  background-color: rgba(85, 143, 211, 0.1);
+  border-radius: 15px;
+}
+.uploadbuttons {
+  justify-content: center !important;
+  gap: 6px !important;
+}
+.resourceAreaContainer {
+  padding: 20px 25px 11px 25px;
+  border-radius: 17px;
+  border-left: 17.16px solid #2691a3;
+  -webkit-box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+  box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+}
+.resourceAreaContainer .centerTitleMain {
+  text-align: justify;
+  font-size: 12px;
+  min-width: 526px;
+  align-self: center;
+}
+.resourceAreaContainer span {
+  font-size: 12px;
+  color: #2691a3;
+}
+.resourceAreaContainer .radiobtn {
+  display: flex;
+  align-items: center;
+}
+.inputResourceContainer {
+  display: flex;
+  gap: 41px;
+}
+.inputResourceContainer input {
+  background-color: inherit;
+}
+.inputResourceContainer input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #2691a3;
+}
+
+.listResourceContainer {
+  display: flex;
+  align-items: center;
+}
+.resourceCategory {
+  font-size: 10px;
+  font-weight: 500;
+  border: 2px #2691a3 solid;
+  color: #2691a3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: max-content;
+  padding: 5.5px 16px;
+  border-radius: 7px;
+}
+
+.CardViewResource {
+  margin-top: 26px;
+  padding: 19px 42px 13px 42px;
+  border-radius: 17px;
+  -webkit-box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+  box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+}
+.viewTitle {
+  margin-bottom: 30px;
+}
+.CardViewResource .textAreaLink {
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.bulkDesc {
+  max-width: 231px;
+  font-size: 9px;
+  font-weight: 500;
+  text-align: center;
+  margin: 23px 0px;
+}
+.bulkuploadContainer {
+  padding: 16px 31px 11px 31px;
+  border-radius: 17px;
+  border-left: 17.16px solid #2691a3;
+  -webkit-box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+  box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+}
+
+.bulkLeftInput input {
+  /* display: block !important; */
+  /* width: 157px !important;
+  height: 57px !important; */
+  opacity: 0 !important;
+  overflow: hidden !important;
+  position: absolute;
+}
+.buldIconCont {
+  height: min-content;
+  width: min-content;
+  background-color: rgba(85, 143, 211, 0.1);
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 9px;
+  /* padding: 30px; */
+}
+.bulkLeftInput .docTitle {
+  font-size: 10px;
+  font-weight: 500;
+  color: #2691a3;
+}
+.bulkTitle {
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+.bulkLeftInput {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.bulkInputContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+.centerButtonContainerBulk {
+  margin-top: 43px;
+  display: flex;
+  justify-content: center;
+}
+
+/* CARD RESOUCE TRENDING */
+
+.CardSurveyTrending {
+  margin-top: 0 !important;
+  border-left: 17.16px solid #2691a3;
+}
+
+.CardResourceTrending {
+  margin-top: 20px;
+  padding: 13px 25px 9px 25px;
+  border-radius: 15px;
+  -webkit-box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+  box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+}
+.requestContainer {
+  height: 176px !important;
+  width: 244px !important;
+}
+.trendingContainer {
+  height: 83px;
+  width: 249px;
+  border-radius: 15px;
+  background-color: rgba(85, 143, 211, 0.1);
+}
+.trendingTitle {
+  margin-bottom: 7px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.CardResourceTrending .textAreaLink {
+  margin: 9px 0px;
+}
+.textAreaLink{
+  cursor: pointer;
+ 
+}
+
+.cardPromote {
+  padding: 24px 63px 0px 63px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.centerbtnPromote {
+  display: flex;
+  justify-content: center;
+  width: max-content;
+  align-self: center !important;
+  margin: 26px 0px;
+}
+
+.CardInput {
+  font-size: 16px;
+  font-weight: 600;
+  color: black !important;
+}
+
+.surveyAreaContainer {
+  padding: 20px 25px;
+  border-radius: 17px;
+  border-left: 17.16px solid #2691a3;
+  -webkit-box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+  box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+}
+.buttonContainerSurvey {
+  display: flex;
+  font-size: 13px;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.buttonContainerSurvey .centerbtn1 {
+  background-color: #ffb934;
+}
+.surveyTitleContainer {
+  display: flex;
+  font-size: 12px;
+  font-weight: bold;
+  color: #2691a3;
+  width: 577px;
+  margin-bottom: 10px;
+}
+.surveyTitlecenter {
+  display: flex;
+  justify-content: center;
+}
+.surveyTitleContainer .surveyTitle {
+  flex: 1;
+}
+.surveyTitleContainer .surveyTitleLink {
+  flex: 3;
+}
+
+/* SUREVEY TRENDING */
+
+.CardSurveyTrendsContainer {
+  margin-top: 26px;
+  padding: 19px 51px 10px 37px;
+  border-radius: 17px;
+  -webkit-box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+  box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+}
+.surveyTypeContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.typeContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.typeContainer .typeTitle {
+  flex: 2;
+  font-size: 12px;
+  font-weight: 600;
+}
+.typeContainer .allIconsContainer {
+  flex: 7;
+  border-radius: 3px;
+}
+.typeContainer .typeColor {
+  flex: 7;
+  border-radius: 3px;
+  background-color: #ff6667;
+  height: 30px;
+}
+.typeColor1 {
+  background-color: #a6d0c4 !important;
+}
+.typeColor2 {
+  background-color: #ffb934 !important;
+}
+.typeColor3 {
+  background-color: #ff6667;
+}
+
+/*PERMA SPREAD*/
+.CardSurveyPERMA {
+  margin-top: 26px;
+  padding: 27px 14px 34px 14px;
+  border-radius: 17px;
+  -webkit-box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+  box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+}
+
+.CardSurveyPERMA .permaTitle {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 17px;
+}
+.CardSurveyPERMA .maintainTitle {
+  font-size: 14px;
+  font-weight: bold;
+  flex: 1;
+}
+.permasContainer {
+  padding: 6px 6px 0px 11px;
+  border: 2px solid #2691a3;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  justify-content: center;
+}
+.maintainContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.maintainCheckboxs {
+  flex: 2;
+}
+.maintainCheckboxs {
+  display: flex;
+  gap: 6px;
+}
+.CardSurveyPERMA .mainChecbox {
+  width: 31px;
+  height: 31px;
+  border-radius: 5px;
+  background-color: #2691a3;
+}
+.CardSurveyPERMA .supportChecbox {
+  width: 31px;
+  height: 31px;
+  border-radius: 5px;
+  background-color: #93d3c5;
+}
+.CardSurveyPERMA .asupportChecbox {
+  width: 31px;
+  height: 20px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* QUESTIONS TAB */
+
+.CardQuestionsAreaContainer {
+  padding: 8px 16px 12px 27px;
+  border-radius: 17px;
+  border-left: 17.16px solid #2691a3;
+  -webkit-box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+  box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+}
+.questionTitleContainer {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+.questionTitleContainer .buttonContainerSurvey {
+  align-items: center;
+}
+.questionTitleContainer .questionAsked {
+  display: flex;
+  align-items: center;
+}
+.questionsContainer {
+  padding: 8px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-radius: 15px;
+  background-color: rgba(85, 143, 211, 0.1);
+}
+.questionInputContainer input:focus {
+  border: 2px solid #2691a3;
+  border-radius: 4px;
+}
+.questionInputContainer input {
+  border: 2px solid #2691a3;
+  width: 497px ;
+  height: 33px;
+  border-radius: 4px;
+}
+.questionInputContainer .inputTitle {
+  font-size: 12px;
+  font-weight: bold;
+  color: #2691a3;
+}
+.questionTextare {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+}
+.questionTextare textarea {
+  width: calc(100% - 20px);
+  height: 58px;
+  padding: 5px;
+  resize: none;
+  border: 1px solid #2691a3;
+  align-self: center;
+  border-radius: 4px;
+}
+.questionTextare textarea:focus {
+  width: 100%;
+  padding: 5px;
+  resize: none;
+  outline: #2691a3;
+  border: 2px solid #2691a3;
+}
+.questionTextare textarea::-webkit-input-placeholder {
+  color: gray;
+}
+.questionTextare .buttonContainerSurvey{
+  display: flex;
+  justify-content: flex-end;
+} 
+
+/* CardQuestionRating   */
+
+.CardQuestionRatingContainer{
+  margin-top: 26px;
+  padding: 19px 37px 7px 37px;
+  border-radius: 17px;
+  -webkit-box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+  box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+}
+.qRatingsContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.qRetingTitle{
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+.CardQuestionsAreaContainer .nextbtn{
+  margin-top: 13px;
+  display: flex;
+justify-content: flex-end !important;
+align-self: flex-end !important;
+}
+
+/* CardOverviewEndingCounter */
+
+.CardOverviewEndingContainer{
+  padding: 29.75px 27.9px 0px 22.54px;
+  border-radius: 17px;
+  border-left: 17.16px solid #2691a3;
+  -webkit-box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+  box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+
+}
+.CardOverviewEndingContainer .endingTitle{
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.firstEnding{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+.endingContainer{
+  display: flex;
+  gap: 9px;
+
+}
+.firstCounter{
+  text-align: center;
+}
+.endingContainer .firstColor,.firstCounter{
+  font-size: 12px;
+  font-weight: bold;
+
+}
+.endingContainer .firstColor{
+  width: 31px;
+  height: 31px;
+  background-color: #2691a3;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.firstColor{
+  background-color: #E9666B !important;
+}
+.firstColor2{
+  background-color: #EE7D2F !important;
+}
+.firstColor3{
+  background-color: #F7BB1F !important;
+}
+.firstColor4{
+  background-color: #9AD2C5 !important;
+}
+.firstColor5{
+  background-color: #4AA9BF !important;
+}
+.firstColor6{
+  background-color: #3E93A7 !important;
+}
+
+
+.ThirdCardContainer{
+  display: flex;
+}
+
+/*   CardOverviewCheckContainer   */
+
+.CardOverviewCheckContainer{
+  margin-top: 26px;
+  padding: 29.75px 0px 18px 56px;
+  border-radius: 15px;
+  -webkit-box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+  box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+  max-width: 250px;
+  font-size: 11px;
+  
+  font-weight: 500;
+  height: max-content;
+}
+.overCheckTitle{
+  margin-bottom: 13px;  
+  font-size: 14px;
+  font-weight: bold;
+  
+}
+.feelingContainer{
+  display: flex;
+  flex-wrap: wrap;
+gap: 10px;
+}
+.singleFeeling{
+  display: flex;
+  gap: 1px;
+  color: white;
+}
+.feelCounter{
+  padding :0px 10px ;
+  background-color: #ff6667;
+  display: flex;
+  align-items: center;justify-content: center;
+  border-radius: 4px;
+}
+/* .feelingButton .singleFeeling{
+
+  display: flex;
+  justify-content: center;
+  align-self: center;
+} */
+.feelingButton{
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  margin-top: 10px;
+}
+.feelTitle{
+
+  border-radius: 4px;
+  min-width: 76px;
+  height: 21px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff6667;
+}
+.feelColor1{
+  background-color: #E8555F !important;
+}
+.feelColor2{
+  background-color: #E9666B !important;
+}
+.feelColor3{
+  background-color: #EE7D2F !important;
+}
+.feelColor4{
+  background-color: #F7BB1F !important;
+}
+.feelColor5{
+  background-color: #3E93A7 !important;
+}
+.feelColor6{
+  background-color: #4AA9BF !important;
+}
+.feelColor7{
+  background-color: #9AD2C5 !important;
+}
+
+/*ThirdCardContainer*/
+
+
+.thirdFirstContainer{
+  margin-top: 26px;
+  margin-left:57px ;
+  border-radius: 15px;
+  -webkit-box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+  box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+ 
+}
+.CardOverviewAreaContainer .overAreaTitle{
+  font-size: 14px;
+  font-weight: bold;
+
+}
+.CardOverviewAreaContainer{
+  padding: 20px 22px;
+}
+
+.thirdSecondContainer{
+  padding: 26px 0px 0px 11px;
+  display: flex;
+  gap: 12px;
+}
+

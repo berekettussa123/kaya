@@ -1,0 +1,130 @@
+.mainContainers{
+  margin-left: 310px;
+}
+.cardContainer2 {
+  flex-direction: column;
+  padding: 16px 0px 29px 0px;
+}
+.FirstcardsContainer {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  padding: 21px 0px 0px 63px;
+  display: flex;
+  gap: 46.91px;
+  flex-wrap: wrap;
+}
+.contactTitle {
+  font-weight: 600;
+  font-size: 14px;
+}
+.secondCardContainer {
+  display: flex;
+}
+.cardInputContact {
+  position: relative;
+  padding: 0px 25px;
+}
+.cardInputContact label {
+  left: 25px !important;
+}
+.cardInputContact input {
+  width: 232px;
+}
+.cardInput {
+  gap: 12px;
+}
+.textAreaTitle {
+  margin-bottom: 8px;
+}
+.cardtextarea {
+  border-radius: 17px;
+  border-left: 17.16px solid #2691a3;
+  -webkit-box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+  box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+  padding: 20px 25px 11px 25px;
+  width: max-content;
+}
+.cardtextarea textarea {
+  background-color: rgba(85, 143, 211, 0.1);
+  width: 577px;
+  height: 290px;
+  padding: 15px 17px;
+  border: none;
+  resize: none;
+  border-radius: 15px;
+}
+.cardtextarea textarea:focus {
+  border: none;
+  outline: none;
+}
+input {
+  /* height: 147px; */
+  width: 147px;
+  border: none;
+  border-bottom: 2px solid #2691a3;
+}
+.textAreaLink {
+  align-self: center;
+  text-align: center;
+  font-size: 14px;
+  color: #2691a3;
+  text-decoration: underline;
+  font-weight: bold;
+  /* margin-top: 20px; */
+}
+
+input:focus {
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #2691a3;
+}
+input:focus ~ label,
+input:valid ~ label {
+  transform: translateY(-10px);
+  font-size: 15px;
+}
+.CardInput {
+  position: relative;
+  color: #93d3c5;
+}
+.CardInput label {
+  position: absolute;
+  bottom: 10px;
+  left: 0px;
+  font-size: 14px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+
+.SmallCardsContainer{
+  padding: 16px 11px 16px 8px;
+  border-radius: 17px;
+  border-left: 17.16px solid #2691a3;
+  -webkit-box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+  box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+
+}
+.SmallCardsContainer .smallBody{
+  height: 103px;
+  width: 198px;
+  background-color: rgba(85, 143, 211, 0.1);
+  border-radius: 15px;
+  margin-bottom: 7px;
+
+}
+.smallCardTitle{
+  margin-bottom: 9px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+.SmallCardNoBorder{
+  border-left: none;
+  padding: 16px 18px 16px 18px;
+}
+.SmallCardNoBorder .smallBody{
+
+}

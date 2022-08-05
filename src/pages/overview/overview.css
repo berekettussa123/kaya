@@ -1,0 +1,7 @@
+.HomeContainer {
+  display: flex;
+}
+.mainContainers {
+  /* flex: 7; */
+  width: 100%;
+}

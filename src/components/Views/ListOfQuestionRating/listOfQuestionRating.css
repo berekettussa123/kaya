@@ -1,0 +1,26 @@
+.ListOfQuestionRatingContainer{
+    width: 100%;
+    background-color: #2691A3;
+    padding: 1px;
+    border-radius: 3px;
+}
+.qRatingListItem{
+    display: flex;
+    gap: 9px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    border: 1px solid white;
+    width: max-content;
+    padding: 2px 4px;
+}
+.qRatingList{
+    display: flex;
+    align-items: center;
+}
+.qratingNumber{
+    display: flex;align-items: center;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+}

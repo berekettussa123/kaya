@@ -1,0 +1,40 @@
+.sidebarContainer{
+    display: flex;
+    flex-direction: column;
+    background-color: #2691A3;
+    background: linear-gradient(#43bacfe8, #2691A3);
+    height: 100vh;
+    max-width: 328px;
+    padding-top: 52px;
+    position: fixed;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+.logoContainer{
+
+    padding-left: 57px;
+    height: 32px;
+    width: 102px;
+}
+.sidebarButtonContainer{
+    margin-top: 64px;
+    width: 310px;
+    align-self: center;
+}
+.sidebarButtonListItem{
+    padding-left: 57px;
+    height: 71px;
+    align-items: center;
+    display: flex;
+    gap: 16px;
+    /* margin-bottom: 23px; */
+}
+.sidebarButtonListItem:hover{
+    background-color: #FFB934;
+    border-radius: 15px;
+    margin: 0px 10px;
+    /* max-width: 310px ; */
+    cursor: pointer;
+   
+}
