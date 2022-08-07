@@ -1,7 +1,7 @@
 .navbarContainer {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: calc(100vw - 310px);
   height: 185px;
   border-bottom: solid 2px rgba(128, 128, 128, 0.536);
 }

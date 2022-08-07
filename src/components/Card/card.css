@@ -387,9 +387,8 @@ textarea::-webkit-input-placeholder {
 .CardResourceTrending .textAreaLink {
   margin: 9px 0px;
 }
-.textAreaLink{
+.textAreaLink {
   cursor: pointer;
- 
 }
 
 .cardPromote {
@@ -523,6 +522,10 @@ textarea::-webkit-input-placeholder {
   gap: 6px;
   justify-content: center;
 }
+.mainContainers {
+  width: calc(100vw - 310px) !important;
+  overflow: hidden;
+}
 .maintainContainer {
   display: flex;
   align-items: center;
@@ -590,7 +593,7 @@ textarea::-webkit-input-placeholder {
 }
 .questionInputContainer input {
   border: 2px solid #2691a3;
-  width: 497px ;
+  width: 497px;
   height: 33px;
   border-radius: 4px;
 }
@@ -624,73 +627,71 @@ textarea::-webkit-input-placeholder {
 .questionTextare textarea::-webkit-input-placeholder {
   color: gray;
 }
-.questionTextare .buttonContainerSurvey{
+.questionTextare .buttonContainerSurvey {
   display: flex;
   justify-content: flex-end;
-} 
+}
 
 /* CardQuestionRating   */
 
-.CardQuestionRatingContainer{
+.CardQuestionRatingContainer {
   margin-top: 26px;
   padding: 19px 37px 7px 37px;
   border-radius: 17px;
   -webkit-box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
   box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
 }
-.qRatingsContainer{
+.qRatingsContainer {
   display: flex;
   flex-direction: column;
   gap: 1px;
 }
-.qRetingTitle{
+.qRetingTitle {
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 6px;
 }
-.CardQuestionsAreaContainer .nextbtn{
+.CardQuestionsAreaContainer .nextbtn {
   margin-top: 13px;
   display: flex;
-justify-content: flex-end !important;
-align-self: flex-end !important;
+  justify-content: flex-end !important;
+  align-self: flex-end !important;
 }
 
 /* CardOverviewEndingCounter */
 
-.CardOverviewEndingContainer{
+.CardOverviewEndingContainer {
   padding: 29.75px 27.9px 0px 22.54px;
   border-radius: 17px;
   border-left: 17.16px solid #2691a3;
   -webkit-box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
   box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
-
 }
-.CardOverviewEndingContainer .endingTitle{
+.CardOverviewEndingContainer .endingTitle {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 16px;
 }
 
-.firstEnding{
+.firstEnding {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 4px;
 }
-.endingContainer{
+.endingContainer {
   display: flex;
   gap: 9px;
-
 }
-.firstCounter{
+.firstCounter {
   text-align: center;
 }
-.endingContainer .firstColor,.firstCounter{
+.endingContainer .firstColor,
+.firstCounter {
   font-size: 12px;
   font-weight: bold;
-
 }
-.endingContainer .firstColor{
+.endingContainer .firstColor {
   width: 31px;
   height: 31px;
   background-color: #2691a3;
@@ -699,33 +700,32 @@ align-self: flex-end !important;
   align-items: center;
   justify-content: center;
 }
-.firstColor{
-  background-color: #E9666B !important;
+.firstColor {
+  background-color: #e9666b !important;
 }
-.firstColor2{
-  background-color: #EE7D2F !important;
+.firstColor2 {
+  background-color: #ee7d2f !important;
 }
-.firstColor3{
-  background-color: #F7BB1F !important;
+.firstColor3 {
+  background-color: #f7bb1f !important;
 }
-.firstColor4{
-  background-color: #9AD2C5 !important;
+.firstColor4 {
+  background-color: #9ad2c5 !important;
 }
-.firstColor5{
-  background-color: #4AA9BF !important;
+.firstColor5 {
+  background-color: #4aa9bf !important;
 }
-.firstColor6{
-  background-color: #3E93A7 !important;
+.firstColor6 {
+  background-color: #3e93a7 !important;
 }
 
-
-.ThirdCardContainer{
+.ThirdCardContainer {
   display: flex;
 }
 
 /*   CardOverviewCheckContainer   */
 
-.CardOverviewCheckContainer{
+.CardOverviewCheckContainer {
   margin-top: 26px;
   padding: 29.75px 0px 18px 56px;
   border-radius: 15px;
@@ -733,31 +733,31 @@ align-self: flex-end !important;
   box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
   max-width: 250px;
   font-size: 11px;
-  
+
   font-weight: 500;
   height: max-content;
 }
-.overCheckTitle{
-  margin-bottom: 13px;  
+.overCheckTitle {
+  margin-bottom: 13px;
   font-size: 14px;
   font-weight: bold;
-  
 }
-.feelingContainer{
+.feelingContainer {
   display: flex;
   flex-wrap: wrap;
-gap: 10px;
+  gap: 10px;
 }
-.singleFeeling{
+.singleFeeling {
   display: flex;
   gap: 1px;
   color: white;
 }
-.feelCounter{
-  padding :0px 10px ;
+.feelCounter {
+  padding: 0px 10px;
   background-color: #ff6667;
   display: flex;
-  align-items: center;justify-content: center;
+  align-items: center;
+  justify-content: center;
   border-radius: 4px;
 }
 /* .feelingButton .singleFeeling{
@@ -766,14 +766,13 @@ gap: 10px;
   justify-content: center;
   align-self: center;
 } */
-.feelingButton{
+.feelingButton {
   display: flex;
   justify-content: center;
   align-self: center;
   margin-top: 10px;
 }
-.feelTitle{
-
+.feelTitle {
   border-radius: 4px;
   min-width: 76px;
   height: 21px;
@@ -782,51 +781,242 @@ gap: 10px;
   align-items: center;
   background-color: #ff6667;
 }
-.feelColor1{
-  background-color: #E8555F !important;
+.feelColor1 {
+  background-color: #e8555f !important;
 }
-.feelColor2{
-  background-color: #E9666B !important;
+.feelColor2 {
+  background-color: #e9666b !important;
 }
-.feelColor3{
-  background-color: #EE7D2F !important;
+.feelColor3 {
+  background-color: #ee7d2f !important;
 }
-.feelColor4{
-  background-color: #F7BB1F !important;
+.feelColor4 {
+  background-color: #f7bb1f !important;
 }
-.feelColor5{
-  background-color: #3E93A7 !important;
+.feelColor5 {
+  background-color: #3e93a7 !important;
 }
-.feelColor6{
-  background-color: #4AA9BF !important;
+.feelColor6 {
+  background-color: #4aa9bf !important;
 }
-.feelColor7{
-  background-color: #9AD2C5 !important;
+.feelColor7 {
+  background-color: #9ad2c5 !important;
 }
 
 /*ThirdCardContainer*/
 
-
-.thirdFirstContainer{
+.thirdFirstContainer {
   margin-top: 26px;
-  margin-left:57px ;
+  margin-left: 57px;
   border-radius: 15px;
   -webkit-box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
   box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
- 
 }
-.CardOverviewAreaContainer .overAreaTitle{
+.CardOverviewAreaContainer .overAreaTitle {
   font-size: 14px;
   font-weight: bold;
-
+  margin-bottom: 17px;
 }
-.CardOverviewAreaContainer{
-  padding: 20px 22px;
+.CardOverviewAreaContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
 }
 
-.thirdSecondContainer{
+.thirdSecondContainer {
   padding: 26px 0px 0px 11px;
   display: flex;
   gap: 12px;
 }
 
+/*CARD GEOGRAPHIC*/
+
+.profileSocialAndGeo {
+  display: flex;
+}
+.CardProfileGeographic {
+  padding: 16px 28px 27px 28px;
+  margin-top: 26px;
+  border-radius: 15px;
+  -webkit-box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+  box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+  margin-left: 46px;
+}
+.geoContainer {
+  border: 2px #2691a3 solid;
+  border-radius: 10px;
+
+  /* padding: 14px 25px 10px 25px; */
+}
+
+.geoContainer .getTitle {
+  border-bottom: 2px solid #2691a3;
+  padding: 14px 174px 10px 24px;
+  color: #2691a3;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.iconcupp {
+  position: absolute;
+  right: 20px;
+}
+
+.getAreaListContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 6px 24px;
+}
+.geoAreaList {
+  color: #848484;
+}
+
+.CardProfilePreviewContainer {
+  margin: 26px 0px 0px 47px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 34px;
+}
+.checkboxContainerProifle {
+  width: 299px;
+  height: 120px;
+  border-radius: 15px;
+  -webkit-box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+  box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+}
+.CardProfilePreviewContainer .previewButtons {
+  display: flex;
+  gap: 6px;
+}
+.CardProfilePreviewContainer .previewButtons .saveButtonP {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 39px;
+  width: 90px;
+  border: 2px solid #2691a3;
+  border-radius: 6px;
+  background-color: #2691a3;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.CardProfilePreviewContainer .previewButtons .previewButton:hover {
+  color: white;
+  background-color: #2691a3;
+}
+.CardProfilePreviewContainer .previewButtons .previewButton {
+  border: 2px solid #2691a3;
+  height: 39px;
+  width: 90px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.profileServiceTitle {
+  font-size: 14px;
+  font-weight: bold;
+}
+.checkboxContainerProifle .yesButtonProfile:hover {
+  background-color: #2691a3;
+  color: white;
+}
+.checkboxContainerProifle .yesButtonProfile {
+  padding: 9px 16px;
+  border: 2px solid #2691a3;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.checkboxContainerProifle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 14px;
+}
+.CardProfilePreviewContainer .profileTwoButtons {
+  display: flex;
+  gap: 9px;
+}
+
+.CardOverviewAreaContainer .profileIconsModal {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #2691a3;
+  padding-right: 7px;
+}
+.divLine1 {
+  width: 1px;
+  background-color: #2691a3;
+}
+
+.overviewlines {
+  display: flex;
+  gap: 45px;
+}
+.CardOverviewAreaContainer .profileLinksPreview {
+  padding-bottom: 0px !important;
+}
+
+.CardOverviewAreaContainer .buttonModalTitle {
+  font-size: 11px;
+  padding: 0px 0px !important;
+}
+.CardOverviewAreaContainer .profileModalButton .buttonModalTitle {
+  background-color: #2691a3;
+  padding: 5px 10px !important;
+  border-radius: 4px;
+}
+.CardOverviewAreaContainer .profileModalButton {
+  display: flex;
+  gap: 8px;
+  background-color: white;
+  margin-top: 0px !important;
+}
+
+.CardOverviewAreaContainer .profileLinksPreview {
+  padding: 0px;
+}
+
+.cardContainer .addProfileLogoo label {
+  
+  margin-top: 20px;
+  font-size: 7px;
+  font-weight: bold;
+}
+
+.cardContainer .addProfileLogoo {
+  align-items: center;
+  gap: 13px;
+}
+.cardContainer .addProfileLogoo label img{
+  width: 22px;
+  height: 22px;
+}
+.cardContainer .addProfileLogoo label{
+  display: flex;
+  flex-direction: column;
+  align-items: center;justify-content: center;
+}
+.cardContainer .addProfileLogoo input {
+  display: none;
+}
+.addLogo23{
+  /* display: flex;
+  flex-direction: column; */
+}

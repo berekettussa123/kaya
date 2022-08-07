@@ -16,8 +16,8 @@ export default function CardResources() {
     <div className="cardsContainer">
       <div className="FirstcardsContainer">
         <CardIconAndTitle title="Wellbeign Scored" icon="category" />
-        <CardIconAndTitle title="Surveys Running" icon="global" />
-        <CardIconAndTitle title="Surveys Actioned" icon="like" />
+        <CardIconAndTitle title="Surveys Running" icon="survey" />
+        <CardIconAndTitle title="Surveys Actioned" icon="actioned" />
       </div>
       <div
         // style={{ height: '410px', width: `638px` }}

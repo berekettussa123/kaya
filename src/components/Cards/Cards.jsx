@@ -18,7 +18,7 @@ export default function Cards() {
     <div className="cardsContainer">
       <div className="FirstcardsContainer">
         <CardIconAndTitle title="Wellbeign Scored" icon="category" />
-        <CardIconAndTitle title="Number Of Sector" icon="global" />
+        <CardIconAndTitle title="Number Of Sector" icon="edit" />
         <CardOverviewEnding />
       </div>
       <div className="FirstcardsContainer secondCardContainer">

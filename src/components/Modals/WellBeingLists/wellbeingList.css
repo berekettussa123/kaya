@@ -1,0 +1,34 @@
+.wellbeingListContainerS{
+    z-index: 2255555;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+.mainContainerWell{
+    background-color: white;
+    padding: 20px 82px 16px 82px;
+    border-radius: 15px;
+}
+.wellbeingListContainer{
+    display: flex ;
+    flex-direction: row !important;
+    gap: 25px;
+}
+.wellbeingListContainerS .listCardTitle{
+    margin-bottom: 37px;
+}
+.wellbeingListContainer .listWellbeing{
+    display: flex;
+    flex-direction: column;
+    gap: 6px !important;
+}
+.wellbeingListContainerS .wellListClose{
+    margin-top: 30px;
+}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import IconAndWellbeing from '../Views/IconAndWellbeing/IconAndWellbeing';
 
 export default function CardAreaResource() {
 
@@ -20,7 +21,7 @@ export default function CardAreaResource() {
           MB file size). Links can be to your website, YouTube, Vimeo or other
           similar platforms. Read More
         </div>
-        <div className="centerIconAndTitleContainer">
+        {/* <div className="centerIconAndTitleContainer">
           <div className="centerIconAndTitle">
             <div className="centerIcon">
               <img src={global} alt="" />
@@ -69,7 +70,8 @@ export default function CardAreaResource() {
               Societal <br /> Wellbeing
             </div>
           </div>
-        </div>
+        </div> */}
+        <IconAndWellbeing/>
         <div className="categoryContainer">
           <div className="singleCategory">Sleep Issues</div>
           <div className="singleCategory">Diet and healthy eating</div>

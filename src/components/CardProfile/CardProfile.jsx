@@ -3,8 +3,10 @@ import Card from '../Card/Card'
 import CardContact from '../Card/CardContact'
 import CardEditlogin from '../Card/CardEditlogin'
 import CardInput from '../Card/CardInput'
+import CardProfileGeographic from '../Card/CardProfileGeographic'
 import CardSocialmedia from '../Card/CardSocialmedia'
 import CardTextArea from '../Card/CardTextArea'
+import CardProfilePreview from '../Card/CardProfilePreview'
 
 export default function CardProfile() {
   return (
@@ -24,8 +26,10 @@ export default function CardProfile() {
           <CardEditlogin/>
         </div>
       </div>
-      <div>
+      <div className='profileSocialAndGeo'>
         <CardSocialmedia/>
+        <CardProfileGeographic/>
+        <CardProfilePreview/>
       </div>
     </div>
   )
