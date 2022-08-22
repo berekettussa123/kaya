@@ -8,7 +8,6 @@ import './card.css';
 export default function CardInput(props) {
   const widt = 298.22;
   const heig = 135;
-  console.log(props.icon);
   return (
     <>
       <div
@@ -21,7 +20,7 @@ export default function CardInput(props) {
         </div>
 
         <div className="CardInput">
-          <input required type="text" />
+          <input required type="text" name={props?.name} onChange={props.handleChange} defaultValue={props?.name}/>
           <label>{props.title}</label>
         </div>
       </div>

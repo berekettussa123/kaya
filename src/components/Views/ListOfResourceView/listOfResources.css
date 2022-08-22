@@ -1,35 +1,66 @@
-.listResourceTitle{
-    font-size: 14px;
-    color: #2691a3;
+.listResourceTitle {
+  flex: 2;
+  width: min-content;
+  font-size: 14px;
+  color: #2691a3;
+  font-weight: bold !important;
+  padding-left: 20px;
+  /* font-size: 14px !important; */
 }
-.iconandrating{
-    display: flex;
+.iconandrating {
+  display: flex;
 }
-.listResourceContainer{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 27px;
-    
+.listResourceContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 27px;
 }
-.listResourceContainer .resourceCategory{
-    background-color: #2691a3;
-    color: white;
+.fffffff {
+  display: flex;
+  gap: 9px;
+  flex: 1;
+  flex-direction: column;
+  margin-right: 25px;
 }
-.resourceIconContainer{
-    display: flex;
-    gap: 13px;
-    font-size: 12px;
-    align-items: center;
+.listResourceContainer .resourceCategory {
+  flex-wrap: wrap;
+  background-color: #2691A3;
+  color: white;
+  display: flex;
 }
-.removeIcon{
-    background-color: #FFB934;
-    padding: 4px 6px;
-    border-radius: 5px;
+.resourceIconContainer {
+  flex: 1;
+  flex-wrap: wrap;
+
+  display: flex;
+  gap: 13px;
+  font-size: 12px;
+  align-items: center;
 }
-.iconandrating{
-    display: flex;
-    background-color: #FF6667;
-    border-radius: 5px;
-    padding: 4px 6px;
-    gap: 6px;
+.listResourceContainer:hover {
+background-color: gainsboro;
+cursor: pointer;
+}
+.listResourceContainer {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-bottom: 1px solid lightgray;
+}
+.removeIcon {
+  background-color: #ffb934;
+  padding: 4px 6px;
+  border-radius: 5px;
+}
+.iconandrating {
+  display: flex;
+  background-color: #ff6667;
+  border-radius: 5px;
+  padding: 4px 6px;
+  gap: 6px;
+  min-width: 26px;
+  justify-content: center;
+  text-align: center;
+}
+.viewTitle {
+  font-weight: bold;
 }

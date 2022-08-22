@@ -2,7 +2,7 @@ import React from 'react'
 import phone from '../../../assets/images/phone.png';
 import './listofWellbeing.css'
 
-export default function ListofWellbeing() {
+export default function ListofWellbeing(props) {
   return (
     <div className='listContainer'>
         <div className="ListaddLogo">
@@ -10,7 +10,7 @@ export default function ListofWellbeing() {
         </div>
 
         <div className="listCardInput">
-          <p>Social Wellbeing</p>
+          <p>{props.item}</p>
         </div>
     </div>
   )

@@ -6,7 +6,64 @@
   box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
   align-items: center;
   justify-content: center;
-  gap: 48px;
+  gap: 20px;
+}
+#pdfFile{
+  display: none;
+}
+.deleteButtonIcon:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.TitleListTitle {
+  color: #2691a3;
+  text-decoration-color: black !important;
+  text-decoration: underline;
+  font-size: 18px;
+  text-transform: capitalize;
+}
+.keyTitleCount {
+  color: black;
+  font-weight: bold;
+}
+.descPopUp {
+  display: flex;
+  width: 90%;
+  align-items: flex-start;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: normal;
+}
+.FileNamea {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 12px;
+  width: 200px;
+  height: 30px;
+  white-space: nowrap;
+}
+.FileName {
+  font-size: 10px !important;
+  text-align: center;
+}
+.deleteButtonIcon:active {
+  color: red;
+}
+.addLogo .logoProfile img {
+  width: 100px;
+  height: 100px;
+}
+.centerbtn:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.centerButtonContainerBulk .centerbtn {
+  min-width: 90px;
+  justify-content: center;
+  text-align: center;
+}
+.centerButton3 {
+  cursor: pointer;
 }
 .addLogo {
   width: 66px;
@@ -92,9 +149,8 @@
   margin-top: 15px;
   margin-bottom: 15px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 52px;
+  /* gap: 52px; */
 }
 .centerIconAndTitleContainer .centerTitle {
   color: #2691a3;
@@ -104,6 +160,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 .centerTitleMain {
   display: flex;
@@ -124,12 +181,14 @@
 }
 .centerButton2 {
   background-color: #ff6667 !important;
+  cursor: pointer;
 }
 .areaCenter {
   background-color: #eef4fb;
   border-radius: 15px;
   padding: 15px 23px 22px 21px;
   width: 577px;
+  position: relative;
 }
 .centerTitle {
   font-size: 7px;
@@ -156,13 +215,14 @@
 .categoryContainer {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 6px;
   width: 100%;
   flex-wrap: wrap;
   margin-bottom: 25px;
 }
 .centerbtn {
+  z-index: 90;
   /* display: flex; */
   /* width: min-content; */
   align-self: flex-end !important;
@@ -188,11 +248,16 @@
   max-width: max-content;
   padding: 5.5px 16px;
   border-radius: 7px;
+  cursor: pointer;
 }
 .cardListsContainer {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 6px;
+}
+.hidebackground {
+  /* background-color: inherit !important; */
 }
 .listCardTitle {
   font-size: 14px;
@@ -212,6 +277,10 @@
   -webkit-box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
   box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
   border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .cardUploadContainer .uploadDesc {
   width: 217px;
@@ -220,6 +289,15 @@
   font-size: 11px;
   background-color: rgba(85, 143, 211, 0.1);
   border-radius: 15px;
+}
+#uploadBtn * {
+  cursor: pointer;
+}
+#uploadBtn {
+  z-index: 333;
+  cursor: pointer;
+}
+.uploadBtn {
 }
 .uploadbuttons {
   justify-content: center !important;
@@ -244,11 +322,13 @@
 }
 .resourceAreaContainer .radiobtn {
   display: flex;
+  z-index: 444;
   align-items: center;
 }
 .inputResourceContainer {
   display: flex;
   gap: 41px;
+  margin-top: 15px;
 }
 .inputResourceContainer input {
   background-color: inherit;
@@ -315,8 +395,10 @@ textarea::-webkit-input-placeholder {
   opacity: 0 !important;
   overflow: hidden !important;
   position: absolute;
+  cursor: pointer;
 }
 .buldIconCont {
+  cursor: pointer;
   height: min-content;
   width: min-content;
   background-color: rgba(85, 143, 211, 0.1);
@@ -371,11 +453,39 @@ textarea::-webkit-input-placeholder {
   height: 176px !important;
   width: 244px !important;
 }
+.poptrend {
+  width: auto !important;
+  height: 100% !important;
+  background-color: inherit !important;
+}
 .trendingContainer {
-  height: 83px;
+  gap: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px 10px;
   width: 249px;
   border-radius: 15px;
   background-color: rgba(85, 143, 211, 0.1);
+}
+.challendeArea {
+  padding: 5px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.trendingListItem {
+  font-size: 15px;
+  font-weight: bold;
+  border-bottom: 1px solid #2691a3;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  margin-bottom: 4px;
+  margin-top: 4px;
 }
 .trendingTitle {
   margin-bottom: 7px;
@@ -419,6 +529,11 @@ textarea::-webkit-input-placeholder {
   border-left: 17.16px solid #2691a3;
   -webkit-box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
   box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+}
+.buttonContainerSurvey .centerbtnQ {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .buttonContainerSurvey {
   display: flex;
@@ -492,11 +607,15 @@ textarea::-webkit-input-placeholder {
 .typeColor3 {
   background-color: #ff6667;
 }
+.trendTitle{
+  text-align: left;
+}
 
 /*PERMA SPREAD*/
 .CardSurveyPERMA {
   margin-top: 26px;
   padding: 27px 14px 34px 14px;
+  
   border-radius: 17px;
   -webkit-box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
   box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
@@ -512,6 +631,21 @@ textarea::-webkit-input-placeholder {
   font-size: 14px;
   font-weight: bold;
   flex: 1;
+}
+.mainAndSub {
+  display: flex;
+  position: absolute;
+  width: auto;
+  left: 0;
+  top: 180px;
+  padding: 0px 6px;
+}
+.selectedAreaClicked {
+  padding-bottom: 200px !important;
+}
+.mainAndSub .categoryContainer {
+  position: relative;
+  margin-bottom: 90px;
 }
 .permasContainer {
   padding: 6px 6px 0px 11px;
@@ -543,12 +677,20 @@ textarea::-webkit-input-placeholder {
   height: 31px;
   border-radius: 5px;
   background-color: #2691a3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 .CardSurveyPERMA .supportChecbox {
   width: 31px;
   height: 31px;
   border-radius: 5px;
   background-color: #93d3c5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 .CardSurveyPERMA .asupportChecbox {
   width: 31px;
@@ -574,6 +716,7 @@ textarea::-webkit-input-placeholder {
 }
 .questionTitleContainer .buttonContainerSurvey {
   align-items: center;
+  display: flex;
 }
 .questionTitleContainer .questionAsked {
   display: flex;
@@ -661,7 +804,7 @@ textarea::-webkit-input-placeholder {
 /* CardOverviewEndingCounter */
 
 .CardOverviewEndingContainer {
-  padding: 29.75px 27.9px 0px 22.54px;
+  padding: 29.75px 36.9px 0px 37.54px;
   border-radius: 17px;
   border-left: 17.16px solid #2691a3;
   -webkit-box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
@@ -726,6 +869,8 @@ textarea::-webkit-input-placeholder {
 /*   CardOverviewCheckContainer   */
 
 .CardOverviewCheckContainer {
+  border-left: 17.16px solid #2691a3;
+
   margin-top: 26px;
   padding: 29.75px 0px 18px 56px;
   border-radius: 15px;
@@ -871,6 +1016,8 @@ textarea::-webkit-input-placeholder {
   flex-direction: column;
   gap: 5px;
   padding: 6px 24px;
+  height: 120px;
+  overflow-y: scroll;
 }
 .geoAreaList {
   color: #848484;
@@ -953,12 +1100,83 @@ textarea::-webkit-input-placeholder {
   display: flex;
   gap: 9px;
 }
-
+.iconContainerModal {
+  display: flex;
+}
 .CardOverviewAreaContainer .profileIconsModal {
   display: flex;
+  position: relative;
   flex-direction: column;
   border-right: 1px solid #2691a3;
   padding-right: 7px;
+}
+.lineLight {
+  /* transform: translateX(140px); */
+  height: 5px;
+  /* width: 140px; */
+  z-index: 3;
+  background-color: #93d3c5;
+  position: absolute;
+  right: 0;
+  top: 20px;
+
+  border-radius: 5px 5px 5px 0px;
+}
+.smallBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.listofwellbeing {
+  display: flex;
+  width: 90%;
+  padding: 5px 5px;
+  border-bottom: 2px solid #2691a3;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px !important;
+}
+.line3 {
+  top: 55px !important;
+}
+.line4 {
+  top: 70px !important;
+}
+.line5 {
+  top: 105px !important;
+}
+.line6 {
+  top: 120px !important;
+}
+.line7 {
+  top: 155px !important;
+}
+.line8 {
+  top: 170px !important;
+}
+.line9 {
+  top: 200px !important;
+}
+.line10 {
+  top: 215px !important;
+}
+.line11 {
+  top: 250px !important;
+}
+.line12 {
+  top: 265px !important;
+}
+.lineDark {
+  right: 0;
+  /* transform: translateX(140px); */
+  height: 5px;
+  /* width: 140px; */
+  z-index: 3;
+  background-color: #2691a3;
+  border-radius: 5px 5px 5px 0px;
+  position: absolute;
+  top: 5px;
 }
 .divLine1 {
   width: 1px;
@@ -994,7 +1212,6 @@ textarea::-webkit-input-placeholder {
 }
 
 .cardContainer .addProfileLogoo label {
-  
   margin-top: 20px;
   font-size: 7px;
   font-weight: bold;
@@ -1004,19 +1221,89 @@ textarea::-webkit-input-placeholder {
   align-items: center;
   gap: 13px;
 }
-.cardContainer .addProfileLogoo label img{
-  width: 22px;
-  height: 22px;
+.cardContainer .addProfileLogoo label img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
 }
-.cardContainer .addProfileLogoo label{
+.cardContainer .addProfileLogoo label {
   display: flex;
   flex-direction: column;
-  align-items: center;justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 .cardContainer .addProfileLogoo input {
   display: none;
 }
-.addLogo23{
+.addLogo23 {
   /* display: flex;
   flex-direction: column; */
+}
+.pdffileUpload input::-webkit-input-placeholder {
+  color: #2691a3;
+  position: absolute;
+  bottom: 0;
+}
+.pdffileUpload input {
+  background-color: inherit;
+}
+
+.pdffileUpload {
+  display: flex;
+  gap: 15px;
+}
+.topWellbeingContainer {
+  background-color: rgba(85, 143, 211, 0.1);
+  width: 244px;
+  border-radius: 15px;
+  padding: 10px;
+}
+.topWellbeingContainer ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-decoration: none;
+  list-style: none;
+  margin: 0;
+  padding: 0px;
+}
+.topWellbeingContainer ul li {
+  padding: 0px 5px;
+  color: black !important;
+  border-bottom: 2px solid #2691a3;
+}
+.topWellbeingContainer ul li div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topWellbeingContainer .keyTitle {
+  font-size: 12px;
+  font-weight: bold;
+}
+.topWellbeingContainerView ul li {
+  /* padding: 0px 20px !important; */
+}
+.topWellbeingContainerView {
+  width: auto !important;
+  background-color: inherit !important;
+}
+.valuesContainer {
+  display: flex;
+  width: 100%;
+  gap: 1px;
+  align-self: center;
+  text-align: center;
+}
+.fromwb {
+  margin-top: 17px !important;
+}
+.valuesContainer .value {
+  flex: 1;
+}
+.typeColor {
+  display: flex;
+  width: 100%;
+  align-items: center !important;
 }

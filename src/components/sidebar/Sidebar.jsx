@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './sidebar.css';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,15 +13,18 @@ import edit from '../../assets/images/edit.png';
 import programmingarrows from '../../assets/images/programming-arrows.png';
 import axios from 'axios';
 export default function Sidebar() {
+  const [profileData, setData] = useState({});
   useEffect(() => {
-      const fetchPosts = async () => {
-        const res = await axios.get("https://partnerdev.kayawellbeingindex.com/api/getPartnerInformation/21")
+    const fetchPosts = async () => {
+      const res = await axios.get(
+        'https://partnerdev.kayawellbeingindex.com/api/getPartnerInformation/21'
+      );
 
-        console.log("Hi"+res)
-      };
-
-      fetchPosts();
-    }, []);
+      setData(res.data);
+    }
+    fetchPosts();
+});
+  
 
   return (
     <div className="sidebarContainer">
@@ -103,13 +106,13 @@ export default function Sidebar() {
       <div className="sidebarProfile">
         <div className="imgSidebarP">
           <img
-            src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bWFsZXxlbnwwfHwwfHw%3D&w=1000&q=80"
+            src={'https://partnerdev.kayawellbeingindex.com/' + profileData.logo}
             alt=""
           />
         </div>
         <div className="sidebarptitleContainer">
-          <div className="ptitlesidebar">Lorem, ipsum</div>
-          <div className="psubtitlesidebar">Lorem ipsum dolor sit.</div>
+          <div className="ptitlesidebar">{profileData.name}</div>
+          <div className="psubtitlesidebar">{profileData.email}</div>
         </div>
         <div className='threedotsp'>
           <FontAwesomeIcon icon={faEllipsisVertical} />

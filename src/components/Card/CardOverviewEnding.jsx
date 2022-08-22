@@ -1,6 +1,7 @@
 import React from 'react'
 
-export default function CardOverviewEnding() {
+export default function CardOverviewEnding(props) {
+   const newEnding=props?.ending&& Object.values(props?.ending)
   return (
     <div className='CardOverviewEndingContainer'>
         <div className="endingTitle">
@@ -9,7 +10,7 @@ export default function CardOverviewEnding() {
         <div className="endingContainer">
             <div className="firstEnding">
                 <div className="firstColor">
-                    12
+                {newEnding&&newEnding[0]}
                 </div>
                 <div className="firstCounter">
                 1
@@ -17,7 +18,8 @@ export default function CardOverviewEnding() {
             </div>
             <div className="firstEnding">
                 <div className="firstColor firstColor2">
-                    33
+                
+                {newEnding&&newEnding[1]}
                 </div>
                 <div className="firstCounter">
                     2
@@ -25,7 +27,8 @@ export default function CardOverviewEnding() {
             </div>
             <div className="firstEnding">
                 <div className="firstColor firstColor3">
-                    22
+                
+                {newEnding&&newEnding[2]}
                 </div>
                 <div className="firstCounter">
                     3
@@ -33,7 +36,7 @@ export default function CardOverviewEnding() {
             </div>
             <div className="firstEnding">
                 <div className="firstColor firstColor4">
-                    32
+                {newEnding&&newEnding[3]}
                 </div>
                 <div className="firstCounter">
                     4
@@ -41,7 +44,7 @@ export default function CardOverviewEnding() {
             </div>
             <div className="firstEnding">
                 <div className="firstColor firstColor5">
-                    55
+                {newEnding&&newEnding[4]}
                 </div>
                 <div className="firstCounter">
                     5
@@ -49,7 +52,8 @@ export default function CardOverviewEnding() {
             </div>
             <div className="firstEnding">
                 <div className="firstColor firstColor6">
-                    76
+            {newEnding &&newEnding[5]}
+                    
                 </div>
                 <div className="firstCounter">
                     6

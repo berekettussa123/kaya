@@ -1,52 +1,86 @@
-.surveyListContainer{
-    display: flex;
-    width: 577px;
-    margin-bottom: 10px;
-    border-bottom: 2px solid #2691a3;
-    padding-bottom: 5px;
+.surveyListContainer {
+  display: flex;
+  width: 577px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #2691a3;
+  padding-bottom: 5px;
 }
-.surveyListItemLink{
-    font-size: 10px;
-    font-weight: 600;
-    flex: 3 !important;
+.surveyListItemLink {
+  font-size: 10px;
+  font-weight: 600;
+  flex:3 !important;
+  /* width: 400px; */
+  flex-wrap: wrap;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-all;
+
+  /* width: 100%; */
+}
+.companyName p{
+    word-wrap: break-word;
+}
+.companyName {
+    display: flex;
     flex-wrap: wrap;
-    /* width: 100%; */
+  word-wrap: break-word;
+  /* width: 70px; */
+  flex: 1;
+  font-size: 12px;
+  font-weight: 600;
 }
-.companyName{
-    font-size: 12px;
-    font-weight: 600;
+.surveyListItem {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-all;
+  flex: 1;
+  /* flex-wrap: wrap; */
+  /* flex: 1 !important ; */
+  /* width: 100%; */
 }
-.surveyListItem{
-    display: flex;
-    align-items: center;
-    
-    flex-wrap: wrap;
-    flex: 1 !important ;
-    /* width: 100%; */
+.surveyListItemDate{
+  flex: 1.1 !important;
+  overflow:  visible;
+  width: min-content;
 }
-.surveyIconContainerIcon{
-    justify-content: center;
+.surveyIconContainerIcon {
+  justify-content: center;
 }
-.surveyIconContainer{
-    display: flex;
-    justify-content: center;
-    gap: 5px;
+.surveyIconContainer {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
 }
-.surveyListItemRecieved{
-    display: flex;
-    justify-content: center;
+.surveyListItemRecieved {
+  display: flex;
+  justify-content: center;
 }
-.surveyListItemRecieved p{
-    font-size: 12px;
-    font-weight: 500;
-    color: #2691a3;
-    /* width: 12px; */
-    width: max-content;
-    padding: 2px 10px;
-    border: 1px solid #2691a3;
-    border-radius: 4px;
+.surveyListItemRecieved p {
+  font-size: 12px;
+  font-weight: 500;
+  color: #2691a3;
+  /* width: 12px; */
+  width: max-content;
+  padding: 2px 10px;
+  border: 1px solid #2691a3;
+  border-radius: 4px;
 }
-.surveyAreaContainer .textAreaLink{
-    display: flex;
-    justify-content: flex-start;
+.surveyAreaContainer .textAreaLink {
+  display: flex;
+  justify-content: flex-start;
+}
+.surveyListItem p input {
+  width: 20px !important;
+  padding: 0px;
+  border: none;
+}
+.datepickerr{
+  border: 2px gray solid;
+  border-radius: 5px;
+  width: inherit;
 }

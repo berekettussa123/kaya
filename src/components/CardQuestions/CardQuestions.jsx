@@ -10,6 +10,7 @@ import './cardQuestions.css'
 import CardQuestionsArea from '../Card/CardQuestionsArea'
 import CardQuestionRating from '../Card/CardQuestionRating'
 
+
 export default function CardQuestions() {
   return (
     <div className="cardsContainer">

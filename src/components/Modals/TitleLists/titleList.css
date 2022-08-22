@@ -32,8 +32,11 @@
   width: 577px;
   height: 466px;
   border-radius: 15px;
-  background-color: rgba(85, 143, 211, 0.1);
+  background-color: rgba(85, 143, 211, 0.1);;
+  /* background-color: rgba(85, 143, 211, 0.1); */
+  overflow-y: scroll;
 }
+
 .TitleListClose {
   color: #2691a3;
   text-decoration: underline;

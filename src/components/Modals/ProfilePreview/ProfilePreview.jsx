@@ -24,10 +24,10 @@ export default function ProfilePreview(props) {
       <div className="profileModal">
         <div className="nameAndLogo">
           <div className="imgContainerP">
-            <img src={logo} alt="" />
+            <img src={props.image} alt="" />
           </div>
-          <div className="profileTitleModal">Name Here</div>
-          <div className="profileDescMOdal">Description here</div>
+          <div className="profileTitleModal">{props.profileData.first_name}</div>
+          <div className="profileDescMOdal">{props.profileData.email}</div>
         </div>
         <div className="profileLinksPreview">
           <div className="profileIconsModal">
@@ -75,7 +75,7 @@ export default function ProfilePreview(props) {
               />
             </div>
           </div>
-          <div className="previewEmail">Email</div>
+          <div className="previewEmail">{props.profileData.email}</div>
           <div className="previewSocialModal">
             <div className="">
               <div className="iconAndInputContainer">
@@ -128,7 +128,7 @@ export default function ProfilePreview(props) {
                 fontSize="20px"
               />
             </div>
-            <div className="buttonModalTitle">Website</div>
+            <div className="buttonModalTitle">{props.profileData.email}</div>
           </div>
           <div className="cancelContainer">
               <FontAwesomeIcon

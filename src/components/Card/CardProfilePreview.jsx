@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import ProfilePreview from '../Modals/ProfilePreview/ProfilePreview'
-
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
+import Button from '@mui/material/Button';
 export default function CardProfilePreview(props) {
   const [show, setShow] = useState(false);
   const showModal = () => {
@@ -31,10 +33,17 @@ const handleClick =()=>{
         <div className="previewButton " onClick={showModal}>
             Preview
         </div>
-        <div className="saveButtonP">
+        <div className="saveButtonP" onClick={props.saveProfile}>
             Save
         </div>
-        <ProfilePreview show={show} handleClose={hideModal}/>
+        <Backdrop
+        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={props.open}
+        onClick={props.handleClose}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
+        <ProfilePreview profileData={props.profileData} image={props.image} show={show} handleClose={hideModal}/>
       </div>
     </div>
   )

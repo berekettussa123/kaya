@@ -6,10 +6,10 @@ export default function CardQuestionsArea() {
       <div className="questionTitleContainer">
         <div className="questionAsked">Questions Asked</div>
         <div className="buttonContainerSurvey">
-          <div className="centerButton3 centerbtn centerbtn1">
-            Create Survey
+          <div className="centerButton3 centerbtn centerbtnQ centerbtn1">
+            Pending
           </div>
-          <div className="centerButton3 centerbtn centerbtn2">View Survey</div>
+          <div className="centerButton3 centerbtn centerbtnQ centerbtn2">Answered</div>
         </div>
       </div>
       <div className="questionsContainer">

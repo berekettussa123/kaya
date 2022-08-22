@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
-export default function CardProfileGeographic() {
+export default function CardProfileGeographic(props) {
   return (
     <div className="CardProfileGeographic">
       <div className="CardProfileGeographicTitle">
@@ -9,16 +9,19 @@ export default function CardProfileGeographic() {
       </div>
       <div className="geoContainer">
         <div className="getTitle">
-          <div>Select Area</div>{' '}
+          <div>Selected Area</div>{' '}
           <div className="iconcupp">
-            <FontAwesomeIcon icon={faAngleUp} color="#2691a3" fontSize="15px" />
+            {/* <FontAwesomeIcon icon={faAngleUp} color="#2691a3" fontSize="15px" /> */}
           </div>
         </div>
         <div className="getAreaListContainer">
-          <div className="geoAreaList">Shopping</div>
-          <div className="geoAreaList">Shopping</div>
-          <div className="geoAreaList">Shopping</div>
-          <div className="geoAreaList">Shopping</div>
+          {props.geographicareas &&
+          <div className="geoAreaList">Geographic Area1</div>
+          }
+          {/* <div className="geoAreaList">Geographic Area2</div>
+          <div className="geoAreaList">Geographic Area3</div>
+          <div className="geoAreaList">Geographic Area4</div>
+          <div className="geoAreaList">Geographic Area4</div> */}
         </div>
       </div>
     </div>

@@ -25,7 +25,7 @@ export default function CardResources() {
       >
         <div className="leftContainer">
           <div className="leftAreaUpload">
-            <CardAreaResource />
+            <CardAreaResource services="resource" />
             <CardViewResource />
           </div>
         </div>
