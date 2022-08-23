@@ -23,7 +23,7 @@ export default function TitleList(props) {
                     <div className="listResourceTitle">{item.title}</div>
 
                     <div className="fffffff">
-                      {item.areas_addressed.split(',').map((index, id) => {
+                      {item.areas_addressed?.split(',').map((index, id) => {
                         return (
                           <div className="resourceCategory">
                             {index.toString()}{' '}

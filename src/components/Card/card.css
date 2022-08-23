@@ -337,10 +337,40 @@
 textarea::-webkit-input-placeholder {
   color: #2691a3;
 }
+.backAdd{
+  background-color: #2691a3 !important;
+  color: white !important;
+}
 
+.resourceCategorySingle{
+  z-index: 44444444 !important;
+  /* background-color: white !important; */
+}
 .listResourceContainer {
   display: flex;
   align-items: center;
+}
+.TitleListContainerSingle .listResourceTitle{
+  width: max-content !important;
+}
+.TitleListContainerSingle{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between !important;
+}
+.TitleListContainerSingle .fffffff{
+  flex: 1 !important;
+  flex-wrap: wrap;
+}
+.TitleListContainerSingle .resourceCategory{
+  width: max-content;
+  height: min-content;
+}
+.closeTag:hover{
+  background-color: #2691a3;
+}
+.closeTag{
+  z-index: 300;
 }
 .resourceCategory {
   font-size: 10px;
