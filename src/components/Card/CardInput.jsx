@@ -20,7 +20,7 @@ export default function CardInput(props) {
         </div>
 
         <div className="CardInput">
-          <input required type="text" name={props?.name} onChange={props.handleChange} defaultValue={props?.name}/>
+          <input required type="text" name={props.names} onChange={props.handleChange} defaultValue={props?.name}/>
           <label>{props.title}</label>
         </div>
       </div>

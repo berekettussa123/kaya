@@ -1,5 +1,5 @@
 .listResourceTitle {
-  flex: 2;
+  flex: 1;
   width: min-content;
   font-size: 14px;
   color: #2691a3;
@@ -73,8 +73,16 @@
   align-items: center;
 }
 .listResourceContainer:hover {
-background-color: gainsboro;
 cursor: pointer;
+}
+.singleUpdate፡active{
+  opacity: 1 !important;
+}
+.singleResource  .listResourceTitle input{
+  width: max-content !important;
+}
+.singleUpdate{
+  align-self: center !important;
 }
 .listResourceContainer {
   padding-bottom: 10px;

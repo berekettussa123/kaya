@@ -28,6 +28,9 @@
   font-weight: bold;
   text-align: center;
 }
+.challendeAreaListChann{
+  width: 95%;
+}
 .TitleListContainer .TitleListBody {
   width: 577px;
   height: 466px;
@@ -36,6 +39,16 @@
   /* background-color: rgba(85, 143, 211, 0.1); */
   overflow-y: scroll;
 }
+.trendingListItemPopTest{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.trendingContainerRes{
+position: relative;
+top: 0;
+}
+
 
 .TitleListClose {
   color: #2691a3;

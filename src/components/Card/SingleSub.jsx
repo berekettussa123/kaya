@@ -14,7 +14,7 @@ export default function SingleSub(props) {
           // console.log(singleSub?.includes(single), single);
           //   setSingle(singleSub)
           // setInclude(singleSub)
-          console.log(props.single);
+          // console.log(props.single?.toString());
         },
         [props.single]
         );
@@ -40,11 +40,11 @@ export default function SingleSub(props) {
         // backgroundColor: `${singleSub?.includes(props.item) && '#2691a3'}`,
         // color: `${singleSub?.includes(props.item) && 'white'}`,
       }}
-      className={`${props.single.includes(props.item) ?'backAdd ':''} resourceCategory resourceCategorySingle`}
+      className={`${props.single?.includes(props.item) ?'backAdd ':''} resourceCategory resourceCategorySingle`}
         // onClick={() =>setSingle( single?.filter((e) => e !== props.item) )}
       onClick={()=>props.handleClick(props.item)}
     >
-      {props.item.toString()}
+      {props.item?.toString()}
     </div>
   );
 }

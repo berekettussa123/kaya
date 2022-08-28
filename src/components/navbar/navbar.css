@@ -23,6 +23,16 @@
   gap: 27px;
   align-items: flex-end;
 }
+.signoutButton:hover {
+background-color: #ffb934;
+color: white;
+opacity: 0.7;
+}
+.signoutButton:active {
+background-color: #ffb934;
+color: white;
+opacity: 1;
+}
 .signoutButton {
   width: 142px;
   height: 45px;

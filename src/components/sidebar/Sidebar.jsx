@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './sidebar.css';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,12 +12,14 @@ import stickynote from '../../assets/images/stickynote.png';
 import edit from '../../assets/images/edit.png';
 import programmingarrows from '../../assets/images/programming-arrows.png';
 import axios from 'axios';
+import { AuthContext } from '../../context/AuthContext';
 export default function Sidebar() {
+  const { user } = useContext(AuthContext);
   const [profileData, setData] = useState({});
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await axios.get(
-        'https://partnerdev.kayawellbeingindex.com/api/getPartnerInformation/21'
+        `${process.env.REACT_APP_BASE_URL}/api/getPartnerInformation/${user.success.partnerId}`
       );
 
       setData(res.data);
@@ -106,7 +108,7 @@ export default function Sidebar() {
       <div className="sidebarProfile">
         <div className="imgSidebarP">
           <img
-            src={'https://partnerdev.kayawellbeingindex.com/' + profileData.logo}
+            src={`${process.env.REACT_APP_BASE_URL}/` + profileData.logo}
             alt=""
           />
         </div>

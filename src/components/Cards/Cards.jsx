@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import CardIconAndTitle from '../Card/CardIconAndTitle';
 import CardOverviewEnding from '../Card/CardOverviewEnding';
 import CardSurveyPERMA from '../Card/CardSurveyPERMA';
@@ -9,13 +9,18 @@ import CardOverviewArea from '../Card/CardOverviewArea';
 import SmallCards from './SmallCards';
 import SmallCardNoBorder from './SmallCardNoBorder';
 import axios from 'axios';
+import { AuthContext } from '../../context/AuthContext';
 export default function Cards() {
+  const { user } = useContext(AuthContext);
   const [data, setData] = useState();
 
+  useEffect(()=>{
+    console.log(user.success.partnerId)
+  })
   useEffect(() => {
     const fetchDatas = async () => {
       const res = await axios.get(
-        'https://partnerdev.kayawellbeingindex.com/api/getOverallSummary/21'
+        `${process.env.REACT_APP_BASE_URL}/api/getOverallSummary/${user.success.partnerId}`
       );
 
       setData(res.data);
@@ -54,6 +59,7 @@ export default function Cards() {
           </div>
         </div>
       </div>
+      <div className="gap" style={{width:'100%',backgroundColor:'white',height:'60px'}}></div>
     </div>
   );
 }

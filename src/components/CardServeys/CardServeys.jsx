@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import CardAreaSurvey from '../Card/CardAreaSurvey'
 import CardBulkUpload from '../Card/CardBulkUpload'
 import CardIconAndTitle from '../Card/CardIconAndTitle'
@@ -12,13 +12,15 @@ import CardSurveyChallenges from '../Card/CardSurveyChallenges'
 import CardSurveyPERMA from '../Card/CardSurveyPERMA'
 import axios from 'axios'
 import CardWellBeing from '../CardsServices/CardWellBeing'
+import { AuthContext } from '../../context/AuthContext'
 export default function CardServeys() {
+  const { user } = useContext(AuthContext);
   const [trend, setTrend] = useState();
   const [wellbeing, setWellbeing] = useState();
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await axios.get(
-        'https://partnerdev.kayawellbeingindex.com/api/getWellbeingServices/21'
+        `${process.env.REACT_APP_BASE_URL}/api/getWellbeingServices/${user.success.partnerId}`
       );
 
       setWellbeing(res.data);
@@ -31,7 +33,7 @@ export default function CardServeys() {
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await axios.get(
-        'https://partnerdev.kayawellbeingindex.com/api/getSurveySummaryForPartner/21'
+        `${process.env.REACT_APP_BASE_URL}/api/getSurveySummaryForPartner/${user.success.partnerId}`
       );
 
       setTrend(res.data);
@@ -80,6 +82,8 @@ export default function CardServeys() {
           </div>
         </div>
       </div>
+      
+      <div className="gap" style={{width:'100%',backgroundColor:'white',height:'60px'}}></div>
     </div>
 
   )

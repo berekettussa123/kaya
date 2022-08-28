@@ -42,7 +42,7 @@ export default function CardAreaResource() {
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await axios.get(
-        'https://partnerdev.kayawellbeingindex.com/api/getSupportAreas'
+        `${process.env.REACT_APP_BASE_URL}/api/getSupportAreas`
       );
 
       setArea(res.data);
@@ -53,7 +53,7 @@ export default function CardAreaResource() {
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await axios.get(
-        'https://partnerdev.kayawellbeingindex.com/api/getHelpAreasSplits'
+        `${process.env.REACT_APP_BASE_URL}/api/getHelpAreasSplits`
       );
 
       setSplit(res.data);

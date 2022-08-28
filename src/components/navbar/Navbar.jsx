@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { logOutCall } from '../../ApiCalls';
 import kayalogo from '../../assets/images/kayalogo.png';
 import profilecircle from '../../assets/images/profile-circle.png';
-import './navbar.css'
+import { AuthContext } from '../../context/AuthContext';
+import './navbar.css';
 export default function Navbar() {
+  const { user, dispatch } = useContext(AuthContext);
+  const handleClick = (e) => {
+    e.preventDefault();
+    logOutCall(dispatch);
+  };
   return (
     <div className="navbarContainer">
       <div className="navLogo">
         <img src={kayalogo} alt="" />
       </div>
       <div className="navButton">
-        <div className="signoutButton">Signout</div>
+        <div className="signoutButton" onClick={handleClick}>
+          Signout
+        </div>
         <div className="helpAndContact">
           <div className="helpButton">
             <div className="navHelpButton">
@@ -20,7 +29,7 @@ export default function Navbar() {
             </div>
           </div>
           <div className="contactButton">
-          <div className="navContactButton">
+            <div className="navContactButton">
               <img src={profilecircle} alt="" />
             </div>
             <div className="navButtonTitle">

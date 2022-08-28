@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import CardAreaResourceSplit from './CardAreaResourceSplit';
 import { faCoins } from '@fortawesome/free-solid-svg-icons';
 import { faSmile } from '@fortawesome/free-solid-svg-icons';
@@ -7,7 +7,9 @@ import { faBrain } from '@fortawesome/free-solid-svg-icons';
 import { faUsers } from '@fortawesome/free-solid-svg-icons';
 import { faHandshakeSimple } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { AuthContext } from '../../context/AuthContext';
 export default function Cardarr(props) {
+  const { user } = useContext(AuthContext);
   const listIcon = [
     faCoins,
     faSmile,
@@ -21,7 +23,6 @@ export default function Cardarr(props) {
     setIsActive(!isActive);
   };
 
-  
   return (
     <div style={{ display: 'flex', flexDirection: 'column' }}>
       <div className="centerIconAndTitle" onClick={props.handleClick}>
@@ -50,13 +51,15 @@ export default function Cardarr(props) {
               {props.finalString?.map((item, id) => {
                 return (
                   <CardAreaResourceSplit
-                  setState={props.setState}
-                  state={props.state}
+                  
+                    setState={props.setState}
+                    state={props.state}
                     listsub={props.selectedSplit}
                     setListsub={props.setSelectedSplit}
                     item={item}
-                    finalString={props.finalString}
+                    selectedSub={props.item}
                     selectedArea={props.selectedArea}
+                    finalString={props.finalString}
                     selectedMental={props.selectedMental}
                     selectedPhysical={props.selectedPhysical}
                     selectedProfessional={props.selectedProfessional}

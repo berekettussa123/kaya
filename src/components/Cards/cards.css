@@ -109,6 +109,7 @@ input:valid ~ label {
   border-left: 17.16px solid #2691a3;
   -webkit-box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
   box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+  
 
 }
 .SmallCardsContainer .smallBody{

@@ -28,6 +28,9 @@ export default function CardIconAndTitle(props) {
           <p style={{fontSize:'20px',fontWeight:'bold'}}>{props.count}</p>
           
           }
+          {props.questions && 
+          <p>{props.questions}</p>
+          }
           <p style={{fontSize:'14px',fontWeight:'bold'}}>{props.title}</p>
         </div>
       </div>

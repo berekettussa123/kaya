@@ -1,14 +1,16 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../../context/AuthContext';
 import TitleList from '../Modals/TitleLists/TitleList';
 
 export default function SmallCardNoBorder(props) {
+  const { user } = useContext(AuthContext);
   const [data, setData] = useState();
 
   useEffect(() => {
     const fetchDatas = async () => {
       const res = await axios.get(
-        'https://partnerdev.kayawellbeingindex.com/api/getOverallSummary/21'
+        `${process.env.REACT_APP_BASE_URL}/api/getOverallSummary/${user.success.partnerId}`
       );
 
       setData(res.data);
@@ -25,13 +27,13 @@ export default function SmallCardNoBorder(props) {
     setShow(false);
   };
   let finalData = props?.areas&&Object.entries(props?.areas)
-  console.log(finalData)
+  // console.log(finalData)
   return (
     <div style={{borderLeft:`{${props.border === "none" && props.border}}!important`}} className='SmallCardsContainer'>
       <div className="smallCardTitle">
       {props.title}
       </div>
-      <div className="smallBody">
+      <div style={{width:`${props.from === "questionPage"&&'auto'}`}} className="smallBody">
 
       {finalData && finalData.slice(0,3).map((keys,values) =>
 

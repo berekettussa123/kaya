@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import IconAndWellbeings from '../Views/IconAndWellbeing/IconAndWellbeing';
 import IconAndWellbeing from '../Views/IconAndWellbeing/IconAndWellbeing';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,13 +9,15 @@ import { faRunning } from '@fortawesome/free-solid-svg-icons';
 import { faBrain } from '@fortawesome/free-solid-svg-icons';
 import { faUsers } from '@fortawesome/free-solid-svg-icons';
 import { faHandshakeSimple } from '@fortawesome/free-solid-svg-icons';
+import { AuthContext } from '../../context/AuthContext';
 export default function CardSurveyTrends() {
   const [trend, setTrend] = useState();
+  const { user } = useContext(AuthContext);
 
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await axios.get(
-        'https://partnerdev.kayawellbeingindex.com/api/getWellbeingTags/21'
+        `${process.env.REACT_APP_BASE_URL}/api/getWellbeingTags/${user.success.partnerId}`
       );
 
       setTrend(res.data);

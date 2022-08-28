@@ -1,10 +1,12 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../../context/AuthContext';
 import TitleList from '../Modals/TitleLists/TitleList';
 
 export default function CardResourceTrending() {
   const [dataTrend, setData] = useState();
   const [show, setShow] = useState(false);
+  const { user } = useContext(AuthContext);
   const showModal = () => {
     setShow(true);
   };
@@ -14,7 +16,7 @@ export default function CardResourceTrending() {
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await axios.get(
-        'https://partnerdev.kayawellbeingindex.com/api/getTrendingResources/21'
+        `${process.env.REACT_APP_BASE_URL}/api/getTrendingResources/${user.success.partnerId}`
       );
 
       setData(res.data);
@@ -29,7 +31,7 @@ export default function CardResourceTrending() {
     <div className="CardResourceTrending">
       <div className="trendingTitle">Your Trending Resources</div>
       <div className="trendingContainer">
-        {dataTrend?.map((item) => {
+        {dataTrend?.slice(0,10).map((item) => {
           return (
             
             <div className="trendingListItem">

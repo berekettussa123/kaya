@@ -1,0 +1,132 @@
+.LoginContainer{
+    display: flex;
+    flex-direction: column;
+
+}
+.loginImageConai{
+    width: 100%;
+}
+.loginBottomImage{
+
+    width: 100vw;
+    height: 100px;
+}
+.loginImageConai img{
+    width: 100vw;
+    height: 100px;
+
+}
+.loginLeft{
+    flex: 2;
+}
+.loginRight{
+    flex: 1;
+}
+.registerLink:active{
+opacity: 1;
+color: rebeccapurple;
+}
+.registerLink:hover{
+    opacity: 0.8;
+}
+.registerLink{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 15px;
+    color: #2691a3;
+}
+.loginRightImage{
+
+    transform: scale(0.7);
+    width: 1000px;
+}
+.loginMainContainer{
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    display: flex;
+}
+.registerLink a{
+    text-decoration: none;
+}
+.registerLinkForgot a{
+    color: #FDC003;
+    text-decoration: none;
+}
+.registerLinkForgot{
+    color: #FDC003;
+}
+.loginLeft{
+
+}
+.loginLogoContainer img{
+    height: 130px !important;
+    width: 130px !important;
+    object-fit: contain !important;
+    position: relative;
+    margin-top: -80px;
+    left: 180px;
+}
+.LoginContainer input[type="text"],
+.LoginContainer input[type="password"] {
+    width: 370px;
+  height: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.LoginContainer input[type="submit"] {
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  background: #FDC003;
+  color: #fff;
+  padding: 5px 5px !important;
+  
+  border: none;
+  border-radius: 10px;
+}
+
+.LoginContainer input[type="submit"]:hover {
+  background: #2691a3;
+}
+
+.LoginContainer .button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.LoginContainer .login-form {
+  background-color: white;
+  padding: 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.LoginContainer .list-container {
+  display: flex;
+}
+.divError{
+    display: flex;
+    justify-content: center;
+
+    color: red;
+    font-size: 12px;
+}
+.LoginContainer .error {
+}
+
+.LoginContainer .title {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.LoginContainer .input-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 0px;
+  margin: 10px;
+}

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import Card from '../Card/Card';
 import CardContact from '../Card/CardContact';
 import CardEditlogin from '../Card/CardEditlogin';
@@ -8,13 +8,18 @@ import CardSocialmedia from '../Card/CardSocialmedia';
 import CardTextArea from '../Card/CardTextArea';
 import CardProfilePreview from '../Card/CardProfilePreview';
 import axios, { Axios } from 'axios';
+import { AuthContext } from '../../context/AuthContext';
 
 export default function CardProfile() {
+  const { user } = useContext(AuthContext);
   const [profileData, setData] = useState({});
   const [logo, setLogo] = useState();
+  const [areas, setAreas] = useState();
   const nameRef = useRef();
   const [file, setFile] = useState(null);
+  const [geographic, setGeographic] = useState();
   const [open, setOpen] = React.useState(false);
+  const [provide,setProvide] = useState()
   const [state, setState] = useState({
     // name: nameRef.current?.value,
     username: profileData?.username ? profileData?.username : '',
@@ -23,6 +28,9 @@ export default function CardProfile() {
     surname: profileData?.surname ? profileData?.surname : '',
     email: profileData?.email ? profileData?.email : '',
     phone: profileData?.phone ? profileData?.phone : '',
+    geographicareas: profileData.geographicareas
+      ? profileData?.geographicareas
+      : '',
     password: profileData?.password ? profileData?.password : '',
     facebook_handle: profileData?.facebook_handle
       ? profileData?.facebook_handle
@@ -33,7 +41,7 @@ export default function CardProfile() {
     youtube_handle: profileData?.ioutube_handle
       ? profileData?.youtube_handle
       : '',
-      picturefile: file ? file : '',
+    picturefile: file ? file : '',
     linkedin_handle: profileData?.iinkedin_handle
       ? profileData?.linkedin_handle
       : '',
@@ -48,7 +56,7 @@ export default function CardProfile() {
     setOpen(true);
     await axios({
       method: 'post',
-      url: 'https://partnerdev.kayawellbeingindex.com/api/updatePartner',
+      url: `${process.env.REACT_APP_BASE_URL}/api/updatePartner`,
       headers: { 'Content-Type': 'multipart/form-data' },
       data: state,
     })
@@ -61,9 +69,9 @@ export default function CardProfile() {
         console.log(error);
       });
   };
-  useEffect(()=>{
+  useEffect(() => {
     // console.log(state)
-  },[state])
+  }, [state]);
 
   const handleClose = () => {
     setOpen(true);
@@ -71,17 +79,26 @@ export default function CardProfile() {
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await axios.get(
-        'https://partnerdev.kayawellbeingindex.com/api/getOverallSummary/21'
+        `${process.env.REACT_APP_BASE_URL}/api/getGeographicAreas/${user.success.partnerId}`
       );
-      
-      console.log(typeof(res.data))
+      setAreas(res.data);
     };
-    fetchPosts()
+    fetchPosts();
   }, []);
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await axios.get(
-        'https://partnerdev.kayawellbeingindex.com/api/getPartnerInformation/21'
+        `${process.env.REACT_APP_BASE_URL}/api/getOverallSummary/${user.success.partnerId}`
+      );
+
+      console.log(typeof res.data);
+    };
+    fetchPosts();
+  }, []);
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const res = await axios.get(
+        `${process.env.REACT_APP_BASE_URL}/api/getPartnerInformation/${user.success.partnerId}`
       );
 
       setData(res.data);
@@ -97,7 +114,7 @@ export default function CardProfile() {
           ? profileData?.facebook_handle
           : '',
         twitter_handle: profileData?.twitter_handle
-          ? profileData?.fwitter_handle
+          ? profileData?.twitter_handle
           : '',
         youtube_handle: profileData?.youtube_handle
           ? profileData?.youtube_handle
@@ -109,17 +126,37 @@ export default function CardProfile() {
           ? profileData?.instagram_handle
           : '',
         picturefile: file,
+        geographicareas: profileData?.geographicareas
+          ? profileData?.geographicareas
+          : '',
         url: profileData?.url ? profileData?.url : '',
         description: profileData?.description ? profileData?.description : '',
       });
     };
-  
 
     fetchPosts();
-  }, [file, profileData?.description, profileData?.email, profileData?.facebook_handle, profileData?.first_name, profileData?.fwitter_handle, profileData?.linkedin_handle, profileData?.instagram_handle, profileData?.youtube_handle, profileData.name, profileData?.password, profileData?.phone, profileData?.surname, profileData?.twitter_handle, profileData?.url, profileData?.username]);
+  }, [
+    file,
+    profileData?.description,
+    profileData?.email,
+    profileData?.facebook_handle,
+    profileData?.first_name,
+    profileData?.fwitter_handle,
+    profileData?.linkedin_handle,
+    profileData?.instagram_handle,
+    profileData?.youtube_handle,
+    profileData.name,
+    profileData?.password,
+    profileData?.phone,
+    profileData?.surname,
+    profileData?.twitter_handle,
+    profileData?.url,
+    profileData?.username,
+    profileData?.geographicareas,
+  ]);
 
   var blob = new Blob(
-    ['https://partnerdev.kayawellbeingindex.com/' + profileData?.logo],
+    [`${process.env.REACT_APP_BASE_URL}/` + profileData?.logo],
     {
       type: 'image/png',
     }
@@ -130,7 +167,7 @@ export default function CardProfile() {
     var base64String = btoa(
       String.fromCharCode(
         ...new Uint8Array(
-          'https://partnerdev.kayawellbeingindex.com/' + profileData?.logo
+          `${process.env.REACT_APP_BASE_URL}/` + profileData?.logo
         )
       )
     );
@@ -144,6 +181,19 @@ export default function CardProfile() {
       [evt.target.name]: value,
     });
   }
+  useEffect(()=>{
+    console.log(geographic)
+  },[geographic])
+
+
+
+  useEffect(() => {
+    setGeographic(
+      profileData.geographicareas
+        ? profileData?.geographicareas?.split(',')
+        : ''
+    );
+  }, [profileData.geographicareas]);
   // useEffect(() => {
   //   console.log(state);
   // }, [state]);
@@ -156,9 +206,30 @@ export default function CardProfile() {
     });
     console.log(state);
   };
+
+  useEffect(()=>{
+    setProvide(profileData.service_online)
+  },[profileData])
+
+useEffect(()=>{
+  setState({
+    ...state,
+    service_online:provide
+  })
+},[provide])
+
+  useEffect(()=>{
+    setState({
+      ...state,
+      geographicareas:geographic?.toString()
+    })
+  },[geographic])
+
+  useEffect(()=>{
+    console.log(state)
+  },[state])
   return (
     <div className="cardsContainer">
-      
       <div className="FirstcardsContainer">
         <Card
           name={profileData?.picturefile}
@@ -166,13 +237,14 @@ export default function CardProfile() {
           file={file}
           setFile={setFile}
           image={
-            'https://partnerdev.kayawellbeingindex.com/' + profileData.logo
+            `${process.env.REACT_APP_BASE_URL}/` + profileData.logo
           }
           title="Wellbeing Score"
         />
         <CardInput
           handleChange={handleChange}
           name={profileData?.name}
+          names="name"
           title="Business Name"
           icon="phone"
           nameRef={nameRef}
@@ -180,6 +252,7 @@ export default function CardProfile() {
         <CardInput
           handleChange={handleChange}
           name={profileData?.url}
+          names="url"
           title="Web Address"
           icon="global"
         />
@@ -219,15 +292,27 @@ export default function CardProfile() {
             profileData?.linkedin_handle,
           ]}
         />
-        <CardProfileGeographic geographicareas={profileData?.geographicareas}/>
+        <CardProfileGeographic
+          geographic={geographic}
+          setGeographic={setGeographic}
+          setAreas={setAreas}
+          areas={areas}
+          geographicareas={profileData?.geographicareas}
+        />
         <CardProfilePreview
-        profileData={profileData}
-        image={'https://partnerdev.kayawellbeingindex.com/' + profileData.logo}
+        provide={provide}
+        setProvide={setProvide}
+          profileData={profileData}
+          image={
+            `${process.env.REACT_APP_BASE_URL}/` + profileData.logo
+          }
           open={open}
           handleClose={handleClose}
           saveProfile={saveProfile}
         />
       </div>
+      
+      <div className="gap" style={{width:'100%',backgroundColor:'white',height:'60px'}}></div>
     </div>
   );
 }

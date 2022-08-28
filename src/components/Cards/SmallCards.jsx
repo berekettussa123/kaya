@@ -1,15 +1,17 @@
 import { border } from '@mui/system'
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { AuthContext } from '../../context/AuthContext';
 import TitleList from '../Modals/TitleLists/TitleList';
 
 export default function SmallCards(props) {
   const [data, setData] = useState();
+  const { user } = useContext(AuthContext);
 
   useEffect(() => {
     const fetchDatas = async () => {
       const res = await axios.get(
-        'https://partnerdev.kayawellbeingindex.com/api/getOverallSummary/21'
+        `${process.env.REACT_APP_BASE_URL}/api/getOverallSummary/${user.success.partnerId}`
       );
 
       setData(res.data);
@@ -26,7 +28,6 @@ export default function SmallCards(props) {
     setShow(false);
   };
   let finalData = props?.areas&&Object.entries(props?.areas)
-  console.log(finalData)
   return (
     <div style={{borderLeft:`{${props.border === "none" && props.border}}!important`}} className='SmallCardsContainer'>
       <div className="smallCardTitle">

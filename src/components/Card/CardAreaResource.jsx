@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import IconAndWellbeing from '../Views/IconAndWellbeing/IconAndWellbeing';
 // import './iconAndWellbeing.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,6 +12,8 @@ import { faHandshakeSimple } from '@fortawesome/free-solid-svg-icons';
 import CardAreaResourceSplit from './CardAreaResourceSplit';
 import CardAreaMain from './CardAreaMain';
 import Cardarr from './Cardarr';
+import { AuthContext } from '../../context/AuthContext';
+import CardArray from './CardArray';
 
 export default function CardAreaResource() {
   const [selectedArea, setSelectedArea] = useState();
@@ -28,9 +30,10 @@ export default function CardAreaResource() {
   const [data, setData] = useState();
   const [pdfTitle, setPdfTitle] = useState();
   const [pdfFile, setPdfFile] = useState(null);
+  const { user } = useContext(AuthContext);
   useEffect(() => {
     setData({
-      username: 'vijay@nairvijay.com',
+      username: `${user.success.username}`,
       wellbeingtype: selectedArea ? selectedArea : '',
       resourcetype: selectedRadio === "pdf" ? 2 : (selectedRadio === "video"?1:''),
       video_url: videolink ? videolink : '',
@@ -67,12 +70,13 @@ export default function CardAreaResource() {
   const handleSave = async () => {
     await axios({
       method: 'post',
-      url: 'https://partnerdev.kayawellbeingindex.com/api/loadIndividualResource',
+      url: `${process.env.REACT_APP_BASE_URL}/api/loadIndividualResource`,
       headers: { 'Content-Type': 'multipart/form-data' },
        data: data,
     })
       .then(function (response) {
         console.log(response);
+        window.location.reload()
         // setOpen(false)
       })
       .catch(function (error) {
@@ -83,7 +87,7 @@ export default function CardAreaResource() {
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await axios.get(
-        'https://partnerdev.kayawellbeingindex.com/api/getSupportAreas'
+        `${process.env.REACT_APP_BASE_URL}/api/getSupportAreas`
       );
 
       setArea(res.data);
@@ -94,7 +98,7 @@ export default function CardAreaResource() {
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await axios.get(
-        'https://partnerdev.kayawellbeingindex.com/api/getHelpAreasSplits'
+        `${process.env.REACT_APP_BASE_URL}/api/getHelpAreasSplits`
       );
 
       setSplit(res.data);
@@ -104,6 +108,7 @@ export default function CardAreaResource() {
   }, []);
 
   useEffect(() => {
+    // eslint-disable-next-line array-callback-return
     split?.map((item) => {
       selectedArea === item.area && setAreaSplit(() => item.areaSplits);
     });
@@ -128,16 +133,16 @@ export default function CardAreaResource() {
   useEffect(() => {
     const newLocal = areaSplitItem?.split(',');
     setfinalString(newLocal);
-  }, [areaSplitItem, finalString]);
+  }, [areaSplitItem]);
   // split?.map((item)=>console.log(item.area))
   useEffect(() => {
-    // console.log(data);
-    console.log(data)
-    // console.log(selectedRadio);
-    // console.log(pdfTitle)
-    // console.log(videolink)
-    // console.log(videotitle)
-  }, [data, selectedRadio, selectedSplit, videolink, videotitle]);
+    console.log(data);
+  }, [data]);
+  const handleClick=(item)=>{
+    setSelectedArea(item)
+    setSelectedSplit([])
+    
+  }
 
   return (
     <div className="resourceAreaContainer">
@@ -161,12 +166,12 @@ export default function CardAreaResource() {
             >
               {area?.map((item, i) => {
                 return (
-                  <Cardarr
+                  <CardArray
                     selectedSplit={selectedSplit}
                     setSelectedSplit={setSelectedSplit}
                     finalString={finalString}
                     selectedArea={selectedArea}
-                    handleClick={() => setSelectedArea(item)}
+                    handleClick={()=>handleClick(item)}
                     icon={i}
                     item={item}
                   />

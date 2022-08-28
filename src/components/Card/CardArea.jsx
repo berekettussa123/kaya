@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import IconAndWellbeing from '../Views/IconAndWellbeing/IconAndWellbeing';
 // import './iconAndWellbeing.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,37 +12,17 @@ import { faHandshakeSimple } from '@fortawesome/free-solid-svg-icons';
 import CardAreaResourceSplit from './CardAreaResourceSplit';
 import CardAreaMain from './CardAreaMain';
 import Cardarr from './Cardarr';
+import { AuthContext } from '../../context/AuthContext';
 
 export default function CardArea(props) {
+  const { user } = useContext(AuthContext);
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await axios.get(
-        'https://partnerdev.kayawellbeingindex.com/api/getPartnerInformation/21'
+        `${process.env.REACT_APP_BASE_URL}/api/getPartnerInformation/${user.success.partnerId}`
       );
 
       setProfileData(res.data);
-      setState({
-        username: profileData?.username ? profileData?.username : '',
-        financial_splits: [profileData?.financial_splits
-          ? profileData.financial_splits
-          : ''],
-        professional_splits: profileData?.professional_splits
-          ? profileData?.professional_splits
-          : '',
-        mental_splits: profileData?.mental_splits
-          ? profileData?.mental_splits
-          : '',
-        physical_splits: profileData?.physical_splits
-          ? profileData?.physical_splits
-          : '',
-        social_splits: profileData?.social_splits
-          ? profileData?.social_splits
-          : '',
-        societal_splits: profileData?.societal_splits
-          ? profileData?.societal_splits
-          : '',
-      });
-      // setState({});
     };
     // console.log(profileData)
 
@@ -56,9 +36,7 @@ export default function CardArea(props) {
   const [areaSplitItem, setAreaSplit] = useState();
   const [isActive, setIsActive] = useState(false);
   const [finalString, setfinalString] = useState([]);
-  const [selectedSplit, setSelectedSplit] = useState([
-    props?.profileData?.financial_splits,
-  ]);
+  const [selectedSplit, setSelectedSplit] = useState();
   const [selectedProfessional, setSelectedProfessional] = useState([]);
   const [selectedPhysical, setSelectedPhysical] = useState([]);
   const [selectedMental, setSelectedMental] = useState([
@@ -72,42 +50,48 @@ export default function CardArea(props) {
   const [file, setFile] = useState(null);
   const [open, setOpen] = React.useState(false);
   const [state, setState] = useState({
-    // name: nameRef.current?.value,
-    username: profileData?.username ? profileData?.username : '',
-    financial_splits:[ profileData?.financial_splits
-      ? profileData.financial_splits
-      : ''],
-    professional_splits: profileData?.professional_splits
-      ? profileData?.professional_splits
-      : '',
-    mental_splits:[ profileData?.mental_splits ? profileData?.mental_splits : ''],
-    physical_splits: profileData?.physical_splits
-      ? profileData?.physical_splits
-      : '',
-    social_splits: profileData?.social_splits ? profileData?.social_splits : '',
-    societal_splits: profileData?.societal_splits
-      ? profileData?.societal_splits
-      : '',
+    username: '',
+    financial_splits: '',
+    professional_splits: '',
+    mental_splits: '',
+    physical_splits: '',
+    social_splits: '',
+    societal_splits: '',
   });
 
+  // useEffect(()=>{
+  //   axios.post('https://partnerdev.kayawellbeingindex.com/api/updatePromotedAreas',{
+  //     username:"vijay@nairvijay.com",
+  //     promotedAreas:',,'
+  //   })
+  // })
+
   useEffect(() => {
+    setState({
+      username: profileData.username,
+      societal_splits: profileData.societal_splits,
+      social_splits: profileData.social_splits,
+      mental_splits: profileData.mental_splits,
+      physical_splits: profileData.physical_splits,
+      professional_splits: profileData.professional_splits,
+      financial_splits: profileData.financial_splits?profileData.financial_splits:'',
+    });
     //  props.profileData?.financial_splits &&
-    //    setSelectedSplit(props.profileData?.financial_splits);
+    setSelectedSplit(profileData.financial_splits? profileData?.financial_splits?.split(','):'');
     //    props.profileData?.professional_splits &&
-    //    setSelectedProfessional(props.profileData?.professional_splits);
+    setSelectedProfessional(profileData?.professional_splits?.split(','));
     //    props.profileData?.financial_splits &&
-    //    setSelectedFinancial(props.profileData?.financial_splits);
+    // setSelectedFinancial(profileData?.financial_splits?.split(','));
     //    props.profileData?.physical_splits &&
-    //    setSelectedPhysical(props.profileData?.physical_splits);
+    setSelectedPhysical(profileData?.physical_splits?.split(','));
     //    props.profileData?.mental_splits &&
-    //   setSelectedMental( props.profileData?.mental_splits);
+    setSelectedMental(profileData?.mental_splits? profileData?.mental_splits?.split(','):'');
     //   props.profileData?.social_splits &&
-    //    setSelectedSocial(props.profileData?.social_splits);
+    setSelectedSocial(profileData?.social_splits?.split(','));
     //    props.profileData?.societal_splits &&
-    //    setSelectedSocietal(props.profileData?.societal_splits);
+    setSelectedSocietal(profileData?.societal_splits?.split(','));
     // console.log(props.profileData?.mental_splits)
     // console.log(selectedMental&&selectedMental);
-    console.log(state);
     //  console.log({
     //    selectedMental:selectedMental,
     //    selectedPhysical:selectedPhysical,
@@ -117,18 +101,26 @@ export default function CardArea(props) {
     //    selectedSocietal:selectedSocietal,
     //  });
   }, [
-    props.profileData?.mental_splits,
-    selectedMental,
-    selectedPhysical,
-    selectedSocial,
-    selectedSplit,
-    state,
+    profileData.financial_splits,
+    profileData.mental_splits,
+    profileData.physical_splits,
+    profileData.professional_splits,
+    profileData.social_splits,
+    profileData.societal_splits,
+    profileData.username,
   ]);
+
+  useEffect(() => {
+    // console.log(selectedArea);
+    // console.log(selectedMental);
+    // console.log(selectedMental);
+    // console.log(selectedProfessional);
+  }, [profileData,selectedArea]);
 
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await axios.get(
-        'https://partnerdev.kayawellbeingindex.com/api/getSupportAreas'
+        `${process.env.REACT_APP_BASE_URL}/api/getSupportAreas`
       );
       setArea(res.data);
     };
@@ -138,7 +130,7 @@ export default function CardArea(props) {
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await axios.get(
-        'https://partnerdev.kayawellbeingindex.com/api/getHelpAreasSplits'
+        `${process.env.REACT_APP_BASE_URL}/api/getHelpAreasSplits`
       );
 
       setSplit(res.data);
@@ -148,6 +140,7 @@ export default function CardArea(props) {
   }, []);
 
   useEffect(() => {
+    // eslint-disable-next-line array-callback-return
     split?.map((item) => {
       selectedArea === item.area && setAreaSplit(() => item.areaSplits);
     });
@@ -158,25 +151,38 @@ export default function CardArea(props) {
   useEffect(() => {
     const newLocal = areaSplitItem?.split(',');
     setfinalString(newLocal);
-  }, [areaSplitItem, finalString]);
+  }, [areaSplitItem]);
 
   const saveProfile = async () => {
     setOpen(true);
     await axios({
       method: 'post',
-      url: 'https://partnerdev.kayawellbeingindex.com/api/updatePartnerAreaSplits',
+      url: `${process.env.REACT_APP_BASE_URL}/api/updatePartnerAreaSplits`,
       headers: { 'Content-Type': 'multipart/form-data' },
-      data: state,
+      data: {
+        username:`${user.success.username}`,
+        financial_splits:selectedSplit.toString(),
+        professional_splits:selectedProfessional.toString(),
+        mental_splits:selectedMental.toString(),
+        physical_splits:selectedPhysical.toString(),
+        social_splits:selectedSocial.toString(),
+        societal_splits:selectedSocietal.toString()
+      },
     })
       .then(function (response) {
         console.log(response);
         setOpen(false);
-        window.location.reload();
+        // window.location.reload();
         // console.log(state);
       })
       .catch(function (error) {
         console.log(error);
       });
+  };
+
+  const handleClick = (item) => {
+    setSelectedArea(item);
+    console.log(item);
   };
 
   return (
@@ -200,8 +206,8 @@ export default function CardArea(props) {
               {area?.map((item, i) => {
                 return (
                   <Cardarr
-                  setState={setState}
-                  state={state}
+                    setState={setState}
+                    state={state}
                     selectedSplit={selectedSplit}
                     selectedMental={selectedMental}
                     selectedPhysical={selectedPhysical}
@@ -218,7 +224,7 @@ export default function CardArea(props) {
                     setSelectedSocietal={setSelectedSocietal}
                     finalString={finalString}
                     selectedArea={selectedArea}
-                    handleClick={() => setSelectedArea(item)}
+                    handleClick={() => handleClick(item)}
                     icon={i}
                     item={item}
                   />

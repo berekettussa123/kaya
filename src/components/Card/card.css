@@ -8,7 +8,61 @@
   justify-content: center;
   gap: 20px;
 }
-#pdfFile{
+.mainSubContaineraa {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.attachButtonQuestion:hover {
+  opacity: 1 !important;
+}
+.attachButtonQuestion {
+  position: relative;
+}
+.attachResource ul {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+}
+.selectedFromResource {
+  font-weight: bold;
+  font-size: 13px;
+  color: #2691a3;
+  text-align: center;
+}
+.attachResource ul .listResourcel፡hover {
+  color: #e8555f !important;
+}
+.attachResource li {
+  padding: 0px 10px;
+  text-decoration: none;
+  list-style: none;
+  border-bottom: 1px solid #2691a3;
+  font-size: 14px;
+  font-weight: bold;
+  color: #2691a3;
+}
+.attachResource:hover {
+  z-index: 9000;
+}
+.attachResource {
+  overflow-y: scroll;
+  padding: 10px 0px;
+  width: 200px;
+  height: 200px;
+  border-radius: 17px;
+  background-color: white;
+  border-left: 17.16px solid #2691a3;
+  -webkit-box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+  box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
+  position: absolute;
+  right: 0;
+  bottom: 40px;
+}
+#pdfFile {
   display: none;
 }
 .deleteButtonIcon:hover {
@@ -145,6 +199,9 @@
   flex-direction: column;
   justify-content: center;
 }
+.centerIconAndTitle:hover {
+  color: white !important;
+}
 .centerIconAndTitleContainer {
   margin-top: 15px;
   margin-bottom: 15px;
@@ -155,6 +212,7 @@
 .centerIconAndTitleContainer .centerTitle {
   color: #2691a3;
 }
+
 .centerIconAndTitle {
   display: flex;
   flex-direction: column;
@@ -216,7 +274,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 6px;
+  gap: 4px;
   width: 100%;
   flex-wrap: wrap;
   margin-bottom: 25px;
@@ -337,12 +395,62 @@
 textarea::-webkit-input-placeholder {
   color: #2691a3;
 }
-.backAdd{
+.backAdd {
   background-color: #2691a3 !important;
   color: white !important;
 }
+.texttitleBulk {
+  font-weight: bold;
+  font-size: 12px;
+  color: #ffb934;
+}
+.bulkContain{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 40px;
+  height: 100%;
+  width: 100%;
+}
+.bulkIconsContainer .centerIconAndTitle {
+  transform: scale(1);
+}
+.bulkIconsContainer .centerIconAndTitle {
+}
+.bulttitle{
+  font-size: 14px;
+  color: #2691a3;
+  margin-top: 50px;
+}
 
-.resourceCategorySingle{
+.bulkIconsContainer {
+  z-index: 2255555;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  display: flex !important;
+  gap: 26px;
+}
+.texttitleBulk {
+  font-size: 15px;
+  color: #2691a3;
+  font-weight: bold;
+}
+.iconBulk:active {
+  color: #072d34;
+  opacity: 1;
+}
+.iconBulk:hover {
+  opacity: 0.6;
+}
+.iconBulk {
+  color: #3e93a7;
+}
+
+.resourceCategorySingle {
   z-index: 44444444 !important;
   /* background-color: white !important; */
 }
@@ -350,27 +458,31 @@ textarea::-webkit-input-placeholder {
   display: flex;
   align-items: center;
 }
-.TitleListContainerSingle .listResourceTitle{
+.TitleListContainerSingle .listResourceTitle {
   width: max-content !important;
 }
-.TitleListContainerSingle{
+.TitleListContainerSingle {
   display: flex;
   flex-direction: column;
   justify-content: space-between !important;
 }
-.TitleListContainerSingle .fffffff{
+.TitleListContainerSingle .fffffff {
   flex: 1 !important;
   flex-wrap: wrap;
 }
-.TitleListContainerSingle .resourceCategory{
+.TitleListContainerSingle .resourceCategory {
   width: max-content;
   height: min-content;
 }
-.closeTag:hover{
-  background-color: #2691a3;
+.closeTag:hover {
+  transition: all 0.4 ease;
+  transform: scale(1.1);
+  color: #2691a3;
 }
-.closeTag{
+.closeTag {
   z-index: 300;
+  font-weight: bold;
+  font-size: 15px;
 }
 .resourceCategory {
   font-size: 10px;
@@ -386,6 +498,8 @@ textarea::-webkit-input-placeholder {
 }
 
 .CardViewResource {
+  height: 580px;
+  overflow-y: scroll;
   margin-top: 26px;
   padding: 19px 42px 13px 42px;
   border-radius: 17px;
@@ -418,10 +532,34 @@ textarea::-webkit-input-placeholder {
   box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
 }
 
+.bulkLeftInput{
+
+  position: relative;
+}
 .bulkLeftInput input {
+  background-color: green;
+  right: 10;
+  position: absolute;
   /* display: block !important; */
   /* width: 157px !important;
   height: 57px !important; */
+
+  opacity: 0 !important;
+  overflow: hidden !important;
+  position: absolute;
+  cursor: pointer;
+}
+.bulkRightInput {
+  position: relative;
+}
+.bulkRightInput input {
+  right: 20;
+  background-color: red;
+  position: absolute;
+  /* display: block !important; */
+  /* width: 157px !important;
+  height: 57px !important; */
+
   opacity: 0 !important;
   overflow: hidden !important;
   position: absolute;
@@ -437,6 +575,11 @@ textarea::-webkit-input-placeholder {
   margin-bottom: 9px;
   /* padding: 30px; */
 }
+.bulkRightInput .docTitle {
+  font-size: 10px;
+  font-weight: 500;
+  color: #2691a3;
+}
 .bulkLeftInput .docTitle {
   font-size: 10px;
   font-weight: 500;
@@ -446,6 +589,12 @@ textarea::-webkit-input-placeholder {
   font-size: 14px;
   font-weight: 600;
   text-align: center;
+}
+.bulkRightInput {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .bulkLeftInput {
   display: flex;
@@ -560,6 +709,9 @@ textarea::-webkit-input-placeholder {
   -webkit-box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
   box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
 }
+.buttonContainerSurvey .centerbtnQ:active {
+  opacity: 1 !important;
+}
 .buttonContainerSurvey .centerbtnQ {
   display: flex;
   align-items: center;
@@ -637,7 +789,7 @@ textarea::-webkit-input-placeholder {
 .typeColor3 {
   background-color: #ff6667;
 }
-.trendTitle{
+.trendTitle {
   text-align: left;
 }
 
@@ -645,7 +797,7 @@ textarea::-webkit-input-placeholder {
 .CardSurveyPERMA {
   margin-top: 26px;
   padding: 27px 14px 34px 14px;
-  
+
   border-radius: 17px;
   -webkit-box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
   box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.24);
@@ -707,6 +859,7 @@ textarea::-webkit-input-placeholder {
   height: 31px;
   border-radius: 5px;
   background-color: #2691a3;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -714,6 +867,7 @@ textarea::-webkit-input-placeholder {
 }
 .CardSurveyPERMA .supportChecbox {
   width: 31px;
+  color: white;
   height: 31px;
   border-radius: 5px;
   background-color: #93d3c5;
@@ -827,7 +981,7 @@ textarea::-webkit-input-placeholder {
 .CardQuestionsAreaContainer .nextbtn {
   margin-top: 13px;
   display: flex;
-  justify-content: flex-end !important;
+  justify-content: space-between;
   align-self: flex-end !important;
 }
 
@@ -865,6 +1019,7 @@ textarea::-webkit-input-placeholder {
   font-weight: bold;
 }
 .endingContainer .firstColor {
+  color: white;
   width: 31px;
   height: 31px;
   background-color: #2691a3;
@@ -910,7 +1065,7 @@ textarea::-webkit-input-placeholder {
   font-size: 11px;
 
   font-weight: 500;
-  height: max-content;
+  /* height: max-content; */
 }
 .overCheckTitle {
   margin-bottom: 13px;
@@ -1051,6 +1206,7 @@ textarea::-webkit-input-placeholder {
 }
 .geoAreaList {
   color: #848484;
+  cursor: pointer;
 }
 
 .CardProfilePreviewContainer {
@@ -1102,6 +1258,50 @@ textarea::-webkit-input-placeholder {
   font-size: 15px;
   font-weight: bold;
   cursor: pointer;
+}
+.ratingSContainer * {
+  text-align: center;
+}
+.ratingSContainer {
+  display: flex;
+  width: 100%;
+  gap: 82px;
+  color: white;
+  justify-content: center;
+}
+.TitleListBodyContact {
+  display: flex;
+  /* text-align: center; */
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+}
+.TitleListBodyContact {
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+.TitleListContainerContact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.trendingListItemPopContact {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.forceback:hover {
+  background-color: white !important;
+  color: black !important;
+}
+.forceback {
+  background-color: white !important;
+  color: black !important;
+}
+.selectedMenu {
+  background-color: #2691a3;
 }
 .profileServiceTitle {
   font-size: 14px;
@@ -1316,7 +1516,7 @@ textarea::-webkit-input-placeholder {
   /* padding: 0px 20px !important; */
 }
 .topWellbeingContainerView {
-  width: auto !important;
+  width: 95%;
   background-color: inherit !important;
 }
 .valuesContainer {

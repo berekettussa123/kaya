@@ -1,18 +1,20 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import ListOfSurvey from '../Views/ListOfSurvey/ListOfSurvey';
 import Box from '@mui/material/Box';
 import Skeleton from '@mui/material/Skeleton';
+import { AuthContext } from '../../context/AuthContext';
 export default function CardAreaSurvey() {
   const [survey, setSurvey] = useState([]);
   const [surveyUpdated, setSurveyUpdates] = useState();
   const [loading, setLoading] = useState(true);
   const [surveyCopy, setSurveyCopy] = useState([]);
+  const { user } = useContext(AuthContext);
   useEffect(() => {
     const fetchPosts = async () => {
       try {
         const res = await axios.get(
-          'https://partnerdev.kayawellbeingindex.com/api/getSurveysListForPartner/21'
+          `${process.env.REACT_APP_BASE_URL}/api/getSurveysListForPartner/${user.success.partnerId}`
         );
         setSurvey(res.data);
         
@@ -40,7 +42,7 @@ export default function CardAreaSurvey() {
 
     const res = await axios({
       method: 'post',
-      url: 'https://partnerdev.kayawellbeingindex.com/api/deleteSurvey',
+      url: `${process.env.REACT_APP_BASE_URL}/api/deleteSurvey`,
       headers: { 'Content-Type': 'multipart/form-data' },
       data: {
         project_id: id,
@@ -56,7 +58,7 @@ export default function CardAreaSurvey() {
         <div className="centerButton3 centerbtn centerbtn1">
           <a
             target={'_blank'}
-            href="https://partnerdev.kayawellbeingindex.com/login/register/21"
+            href={`${process.env.REACT_APP_BASE_URL}/login/register/${user.success.partnerId}`}
           >
             Create Survey
           </a>

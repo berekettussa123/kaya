@@ -1,12 +1,14 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../../context/AuthContext';
 
 export default function CardSurveyPERMA(props) {
   const [perma, setPerma] = useState();
+  const { user } = useContext(AuthContext);
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await axios.get(
-        'https://partnerdev.kayawellbeingindex.com/api/getPermaCountsForPartner/21'
+        `${process.env.REACT_APP_BASE_URL}/api/getPermaCountsForPartner/${user.success.partnerId}`
       );
 
       setPerma(res.data);
